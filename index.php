@@ -41,21 +41,51 @@
         </header>
 
         <section class="row cards_">
-            <div class="col-md-4 col-5 card_">
-                <h3>
-                    Pizza
+            <div class="menu-title_">
+                <h3>- Cardápio -</h3>
+            </div>
+            
+            <div class="col-md-3 col-5 card_ azul_">
+                <h3 class="card-title_">
+                    Pizzas
                 </h3>
             </div>
-            <div class="col-md-4 col-5 card_">
-                <h3>
-                    Pizza
+            <div class="col-md-3 col-5 card_ vermelho_ ">
+                <h3 class="card-title_">
+                    Hamburgueres
                 </h3>
             </div>
-            <div class="col-md-4 col-5 card_">
-                <h3>
-                    Pizza
+            <div class="col-md-3 col-5 card_ rosa_">
+                <h3 class="card-title_">
+                    Lanches
                 </h3>
             </div>
+            <div class="col-md-3 col-5 card_ verde_ ">
+                <h3 class="card-title_">
+                    Bebidas
+                </h3>
+            </div>
+            <div class="col-md-3 col-5 card_ azul_">
+                <h3 class="card-title_">
+                    Pizzas
+                </h3>
+            </div>
+            <div class="col-md-3 col-5 card_ vermelho_ ">
+                <h3 class="card-title_">
+                    Hamburgueres
+                </h3>
+            </div>
+            <div class="col-md-3 col-5 card_ rosa_">
+                <h3 class="card-title_">
+                    Lanches
+                </h3>
+            </div>
+            <div class="col-md-3 col-5 card_ verde_ ">
+                <h3 class="card-title_">
+                    Bebidas
+                </h3>
+            </div>
+
         </section>
         
     </main>
