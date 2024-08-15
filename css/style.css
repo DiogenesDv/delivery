@@ -226,6 +226,9 @@ body {
   padding: 5px;
   margin-top: 65px;
 }
+.lista_itens_2{
+  padding: 5px;
+}
 .valor_item_{
   display: block;
   color: blue;
@@ -237,8 +240,17 @@ body {
   margin-bottom: 10px;
   background-color: #ebebeb;
 }
+.titulo-itens-margins_2{
+  margin: 5px;
+  background-color: #ebebeb;
+}
 .total_{
   text-align: right;
   margin-right: 10px;
   font-size: larger;
+}
+.botao_{
+  text-align: right;
+  margin-right: 5px;
+  margin-bottom: 10px;
 }

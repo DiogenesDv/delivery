@@ -49,6 +49,37 @@
   <b>R$ 0,0</b>
 </div>
 
+<ol class="list-group lista_itens_2">
+
+  <div class="list-group titulo-itens-margins_ list-group-item">
+    <span>Remover ingredientes?</span>
+  </div>
+
+  <a href="adicionais.php" class="link-neutro_">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <span class="">Tomate</span>
+      <i class="bi bi-check-square-fill"></i>
+    </li>
+  </a>
+
+  <a href="adicionais.php" class="link-neutro_">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <span class="">Azeitona</span>
+      <i class="bi bi-check-square-fill"></i>
+    </li>
+  </a>
+
+  <a href="adicionais.php" class="link-neutro_">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <span class="">Oregano</span>
+      <i class="bi bi-check-square-fill"></i>
+    </li>
+  </a>
+</ol>
+
+<div class="botao_">
+  <button class="btn btn-primary">Avançar <i class="bi bi-arrow-bar-right"></i></button>
+</div>
 </body>
 
 </html>
