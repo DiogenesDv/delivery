@@ -47,7 +47,14 @@
   </li>
 
 </ol>
-
+<hr class="hr_">
+<div class="titulo_descricao_item_">
+  <span>Descrição Pizza  Calabresa</span> 
+  <br>
+  <i class="descricao_item_">
+    Pizza de calabresa com calabresa, e calabresa de calabre com tempero de calabresa, com molho de calabresa e recheiro de calabresa calabresada!
+  </i>
+</div>
 
 
 </body>

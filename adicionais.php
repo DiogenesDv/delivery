@@ -77,8 +77,8 @@
   </a>
 </ol>
 
-<div class="botao_">
-  <button class="btn btn-primary">Avançar <i class="bi bi-arrow-bar-right"></i></button>
+<div class="botao_ d-grid">
+ <a href="observacoes.php" class="btn btn-primary">Avançar<i class="bi bi-arrow-bar-right"></i></a>
 </div>
 </body>
 

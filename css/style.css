@@ -127,7 +127,8 @@ body {
   margin-right: 10px;
   visibility: hidden;
   opacity: 0;
-  background: #f5f5f5;
+  background: #b0afafef;
+  border-radius: 5%;
   width:300px;
   height:auto;
 }
@@ -220,7 +221,7 @@ body {
 /* ***************************************** */
 .icone_seta_voltar_{
   color: #26b0fb;
-  margin-left: 150px;
+  margin-left: 100px;
 }
 .lista_itens_{
   padding: 5px;
@@ -251,6 +252,49 @@ body {
 }
 .botao_{
   text-align: right;
-  margin-right: 5px;
   margin-bottom: 10px;
+  padding: 4px;
+}
+
+.hr_{
+  margin: 15px 5px 0px 5px;
+}
+.titulo_descricao_item_{
+  font-weight: 600;
+  font-size: 14px;
+  margin: 10px 10px 5px 10px ;
+}
+
+.descricao_item_{
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.destaque_{
+  padding: 10px;
+  margin: 72px 7px 5px 7px;
+  box-shadow: 0px 0px 7px #020202a6;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.destaque_qtd_{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px 7px 5px 7px;
+  border-top: none;
+  border-bottom: 0.5px solid #020202a6;
+  border-left: 1px solid #020202a6;
+  border-right: 1px solid #1616168b;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btns_up_minus_{
+  color: #26b0fb;
+  display: flex;
+  font-size: 20px;
+  gap: 25px;
 }
