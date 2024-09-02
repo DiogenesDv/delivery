@@ -75,6 +75,20 @@
       <i class="bi bi-check-square-fill"></i>
     </li>
   </a>
+
+  <a href="adicionais.php" class="link-neutro_">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <span class="">Oregano</span>
+      <i class="bi bi-check-square-fill"></i>
+    </li>
+  </a>
+
+  <a href="adicionais.php" class="link-neutro_">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <span class="">Oregano</span>
+      <i class="bi bi-check-square-fill"></i>
+    </li>
+  </a>
 </ol>
 
 <div class="botao_ d-grid">

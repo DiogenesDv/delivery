@@ -120,6 +120,12 @@ body {
 }
 
 /****************** Poppups**************** */
+.botao_{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
 .overlay {
   position: fixed;
   top: 60px;  
@@ -143,7 +149,7 @@ body {
   padding: 10px;    
 }
 
-.popup .close {
+.close {
   position:absolute;
   top:0;
   right:10px;
@@ -154,20 +160,18 @@ body {
   color: #333;
   font-size: 30px;
 }
-.popup .close:hover {
+.close:hover {
   color: #fe0404;
-  border: 2px solid red;
-  border-radius: 20px;
 }
 
 .overlay_2{
+  display: flex;
   position: fixed;
   bottom: 0px;   
-  margin-right: 10px;
   visibility: hidden;
   opacity: 0;
   background: #b0afafef;
-  border-radius: 5%;
+  border:2px solid #26b0fb;
   width:100%;
   height:auto;
 }
@@ -178,28 +182,32 @@ body {
 }
 
 .popup_2 {
-  margin: 5px auto;
-  padding: 10px;    
+  margin: 10px 15px 10px 15px;
+  padding: 5px;    
 }
 
-.popup_2 .close_2 {
-  position:absolute;
-  bottom:80;
+.close_2 {
+  position: fixed;
+  right: 20px;
+  bottom: 115px;
   transition: all 200ms;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   color: #333;
   font-size: 30px;
 }
-.popup_2 .close_2:hover {
+.close_2:hover {
   color: #fe0404;
-  border: 2px solid red;
-  border-radius: 20px;
+}
+.titulo-popup_2{
+  padding-top: 10px;
+  font-size: 18px;
 }
 
-
-
+.row_2{
+  display: flex;
+}
 
 .linha{
   margin:5px 0px;
@@ -210,6 +218,10 @@ body {
   font-weight: 500;
 }
 
+.sombra_{
+  border-radius: 0%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 
 .conteudo-popup{
   font-size:15px;
@@ -270,6 +282,7 @@ body {
 }
 .lista_itens_2{
   padding: 5px;
+  margin-bottom: 50px;
 }
 .valor_item_{
   display: block;
@@ -343,4 +356,17 @@ body {
   display: flex;
   font-size: 20px;
   gap: 25px;
+}
+
+.btn_{
+  width: 100%;
+  padding-right: 10px;
+  margin-left: 10px;
+}
+
+.mensagem_aviso_{
+  text-align: center;
+  padding-top: 8px;
+  color: red;
+  font-size: 15px;
 }

@@ -38,7 +38,7 @@
 </div>
 
 <div class="botao_ d-grid">
- <a href="#popup2" class="btn btn-primary">Adicionar ao carrinho  <i class="bi bi-cart4"></i></a>
+  <a href="#popup2" class="btn btn-primary">Adicionar ao carrinho <i class="bi bi-cart4"></i></a>
 </div>
 
 </body>
@@ -46,18 +46,33 @@
 </html>
 
 <div id="popup2" class="overlay_2">
-    <div class="popup_2">
-        <div class="row">
-            <div class="col-9">
-                <h3 class="titulo-popup">3 Itens Adicionados</h3>
+  <div>
+    <a class="close_2" href="#">&times;</a>
+  </div>
+  <div class="popup_2">
+    <div class="row_2">
+      <div class="col-11">
+        <form action="carrinho.php" method="post" class="row">
+          <label for="">Dados Importates do Cliente!</label>
+          <hr class="linha">
+          <div class="col-6">
+            <input type="text" id="nome" name="nome" class="form-control sombra_" placeholder="Nome:" required></input>
+          </div>
+          <div class="col-6">
+            <input type="text" id="whats-tel" name="whats-tel" class="form-control sombra_" placeholder="Whatsapp-tel:" required></input>
+          </div>
+          <hr class="linha">
+          <div class="row btns_">
+            <div class="col-6">
+              <a href="index.php" class="btn btn-primary btn_">Comprar mais +</a>
             </div>
-            <div class="col-3">
-                <a class="close" href="#">&times;</a>
+            <div class="col-6">
+              <a href="" class="btn btn-success btn_">Finalizar Pedido</a>
             </div>
-        </div>
-        <hr class="linha">
-        <div class="conteudo-popup">
-            Aqui vamos colocar depois o conteúdo desse popup trazendo os itens que forem adicionados no carrinho
-        </div>
+            <div id="mensagem_aviso_" class="mensagem_aviso_">Prencha tudo logo oxi</div>
+          </div> 
+        </form>
+      </div>
     </div>
+  </div>
 </div>
