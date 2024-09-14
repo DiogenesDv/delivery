@@ -2,7 +2,7 @@
 
 <nav class="navbar bg-body-tertiary fixed-top header_top">
   <div class="container-fluid">
-    <span>Resumo do Pedido</span>
+    <span>RESUMO DO PEDIDO</span>
     <div class=".icone_seta_voltar_">
       <a class="navbar-brand" href="index.php" alt="Voltar" title="Botão Voltar">
         <big><i class="bi bi-arrow-left-circle icone_seta_voltar_"></i></big>
@@ -13,31 +13,36 @@
   </div>
 </nav>
 
-<ol class="list-group list-group-numbered lista_itens_">
-<div class="itens_topo_">
-  <span>ITENS</span>
+<div class="list-group lista_itens_">
+
+  <a href="adicionais.php" class="link-neutro_">
+    <div class="titulo-itens-margins_ list-group-item d-flex justify-content-between align-items-center">
+      <b><span class="">Pizza Calabresa</i></span></b>
+      <div class="destaque_qtd_3">
+        <strong>Qtd</strong>
+        
+        <div class="btns_up_minus_">
+          <i class="bi bi-plus-circle-fill"></i>
+          <span> 0 </span>
+          <i class="bi bi-dash-circle-fill"></i>
+        </div>
+
+      </div>
+      <div class="carrinho-qtd">
+  
+        <div class="valor_item_carrinho_">
+          <span>R$ 15,00</span>
+        </div>
+
+      </div>
+      <i class="bi bi-trash-fill icone_excluir_item_"></i>
+
+    </div>
+    <div class="titulo-itens-margins_ carrinhos_itens_qtd_">
+
+    </div>
+  </a>
 </div>
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <a href="variacoes.php" class="link-neutro_">
-        <div class="fw-bold">Pizza de Calabresa</div>
-        <span class="fw-bold valor_item_">(P)R$ 25,00  (M)R$ 30,00 (G)R$35,00</span>
-        <spam class="descricao_item_">Broda de queijo vermelho</spam>
-    </div>
-    </a>
-  </li>
-
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <a href="variacoes.php" class="link-neutro_">
-        <div class="fw-bold">Pizza queijo</div>
-        <span class="fw-bold valor_item_">(P)R$ 30,00  (M)R$ 35,00 (G)R$40,00</span>
-        <spam class="descricao_item_">Borda de queijo branco</spam>
-    </div>
-    </a>
-  </li>
-
-</ol>
 
 </body>
 

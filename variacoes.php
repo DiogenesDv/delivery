@@ -55,6 +55,9 @@
     Pizza de calabresa com calabresa, e calabresa de calabre com tempero de calabresa, com molho de calabresa e recheiro de calabresa calabresada!
   </i>
 </div>
+<div>
+  <img class="imagem-produtos_" src="img/produtos/calabresa.jpg" alt="">
+</div>
 
 
 </body>

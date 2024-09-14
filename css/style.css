@@ -292,7 +292,6 @@ body {
   font-size: small;
 }
 .titulo-itens-margins_{
-  margin-bottom: 10px;
   background-color: #ebebeb;
 }
 .titulo-itens-margins_2{
@@ -333,7 +332,7 @@ body {
   font-weight: 500;
 }
 
-.destaque_qtd_, .destaque_qtd_2{
+.destaque_qtd_, .destaque_qtd_2, .destaque_qtd_3{
   display: flex;
   justify-content: space-between;
   padding: 10px;
@@ -344,6 +343,15 @@ body {
   border-right: 1px solid #1616168b;
   font-size: 16px;
   font-weight: 500;
+}
+
+.destaque_qtd_3{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
 }
 
 .destaque_qtd_2{
@@ -369,4 +377,21 @@ body {
   padding-top: 8px;
   color: red;
   font-size: 15px;
+}
+
+.imagem-produtos_{
+  width: 100%;
+  padding: 15px;
+}
+
+.icone_excluir_item_{
+  color: rgb(255, 255, 255);
+  background-color: rgb(197, 52, 52);
+  border: 1px solid red;
+  padding: 3px;
+  border-radius: 25%;
+}
+
+.carrinhos_itens_qtd_{
+  padding-left: 15px;
 }

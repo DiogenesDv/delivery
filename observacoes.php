@@ -67,7 +67,7 @@
               <a href="index.php" class="btn btn-primary btn_">Comprar mais +</a>
             </div>
             <div class="col-6">
-              <a href="" class="btn btn-success btn_">Finalizar Pedido</a>
+              <a href="carrinho_itens.php" class="btn btn-success btn_">Finalizar Pedido</a>
             </div>
             <div id="mensagem_aviso_" class="mensagem_aviso_">Prencha tudo logo oxi</div>
           </div> 
@@ -76,3 +76,12 @@
     </div>
   </div>
 </div>
+
+<!-- jQery -->
+<script src="js/jquery-3.4.1.min.js"></script>
+
+<!-- Mascaras JS -->
+<script type="text/javascript" src="js/mascaras.js"></script>
+
+<!-- Ajax para funcionar Mascaras JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script> 
