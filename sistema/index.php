@@ -22,6 +22,7 @@
             <div class="col-md-6">
                 <div class="card px-5 py-5" id="form1">
                     <div class="text-center titulo_tela_login">
+                        <h5 style="color: #4d97e5;">ADM Delivery</h5>
                         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" style="margin-bottom: 10px; color: #4d97e5;" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                             <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
                         </svg>
@@ -34,11 +35,11 @@
                             <div class="forms-inputs mb-4"> <span>Senha</span> <input autocomplete="off" type="password" v-model="password" v-bind:class="{'form-control':true, 'is-invalid' : !validPassword(password) && passwordBlured}" v-on:blur="passwordBlured = true" class="form-control" required>
                                 <div class="invalid-feedback"></div>
                             </div>
-                                <div class="mb-3"> <button type="submit" class="btn btn-primary w-100">Login</button> </div>
-                            </div>
-                        </form>
+                            <div class="mb-3"> <button type="submit" class="btn btn-primary w-100">Login</button> </div>
+                    </div>
+                    </form>
                     <div class="success-data" v-else>
-                        <div class="text-center d-flex flex-column"><span>Recuperar senha</span> </div>
+                        <div class="text-center d-flex flex-column"><a href="" data-bs-toggle="modal" data-bs-target="#modal_rec" class="link_recuperar_senha">Recuperar senha</a></div>
                     </div>
                 </div>
             </div>
@@ -46,3 +47,76 @@
     </div>
 
 </body>
+
+<!-------------Modal recuperar senha---------------->
+
+<!-- Modal -->
+<div class="modal fade" id="modal_rec" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Recuperar senha</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <form action="" id="form-rec">
+                    <div class="row">
+                        <div class="col-4" style="padding-top: 5px;">
+                            <span>Digite seu email:</span>
+                        </div>
+                        <div class="col-8">
+                            <input type="email" name="email_rec" id="email-recuperar" class="form-control" required>
+                        </div>
+                        <br>
+                        <div id="mensagem-recuperar" style="text-align: center; padding-top:10px; padding-bottom:10px;">MENSAGEM</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Recuperar</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!--Ajax-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+    $("#form-rec").submit(function() {
+
+        event.preventDefault();
+        var formData = new FormData(this);
+
+        $.ajax({
+            url: "recuperar-senha.php",
+            type: 'POST',
+            data: formData,
+
+            success: function(mensagem) {
+                $('#mensagem-recuperar').text('');
+                $('#mensagem-recuperar').removeClass()
+                if (mensagem.trim() == "Recuperado com Sucesso") {
+                    //$('#btn-fechar-rec').click();					
+                    $('#email-recuperar').val('');
+                    $('#mensagem-recuperar').addClass('text-success')
+                    $('#mensagem-recuperar').text('Sua Senha foi enviada para o Email')
+
+                } else {
+
+                    $('#mensagem-recuperar').addClass('text-danger')
+                    $('#mensagem-recuperar').text(mensagem)
+                }
+
+
+            },
+
+            cache: false,
+            contentType: false,
+            processData: false,
+
+        });
+
+    });
+</script>

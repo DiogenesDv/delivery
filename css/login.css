@@ -43,9 +43,14 @@ body {
 }
 .success-data:hover{
     text-decoration: underline;
+    font-size: 14px;
 }
 
 .titulo_tela_login{
     margin: 10px;
     font-size: 12px;
+}
+
+.link_recuperar_senha{
+    text-decoration: none;
 }
