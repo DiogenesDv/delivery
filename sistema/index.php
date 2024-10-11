@@ -65,7 +65,7 @@
                             <span>Digite seu email:</span>
                         </div>
                         <div class="col-8">
-                            <input type="email" name="email_rec" id="email-recuperar" class="form-control" required>
+                            <input type="email" name="email-rec" id="email-recuperar" class="form-control" required>
                         </div>
                         <br>
                         <div id="mensagem-recuperar" style="text-align: center; padding-top:10px; padding-bottom:10px;">MENSAGEM</div>

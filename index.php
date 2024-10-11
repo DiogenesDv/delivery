@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">
                     <img src="img/pizza-svgrepo-com.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                    Delivery Interativo
+                    <?php echo $nome_sistema?>
                 </a>
 
                 <a class="text-dark" href="#popup1">

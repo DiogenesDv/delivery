@@ -1,3 +1,4 @@
 <?php
-    echo 'Teste';
+    $email = $_POST['email-rec'];
+    echo $email;
 ?>
