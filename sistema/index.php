@@ -1,3 +1,16 @@
+<?php
+require_once("conexao.php");
+//CRIANDO UM USUÁRIO ADMINITRADOR
+$senha = '123';
+$senha_crip = md5($senha);
+
+//VERIFICAR SE EXISTE USUÁRIO ADMINISTRADOR CADASTRADO
+$query = $pdo->query("SELECT * FROM usuarios WHERE nivel = 'Administrador'");
+
+$pdo->query("INSERT INTO usuarios SET nome = 'Administrador', email = '$email_sistema', senha = '$senha', senha_crip = '$senha_crip', nivel = 'Administrador', ativo = 'Sim', data = curDate() ");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

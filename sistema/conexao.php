@@ -15,4 +15,6 @@
     $nome_sistema = 'Delivery interativo';
     $email_sistema = 'diogenesdesenvolvedor@gmail.com';
     $telefone_sistema = '(88)98190-9378';
+    $whatsapp_sistema = '55'.preg_replace('/[ ()-]+/' , '' , $telefone_sistema);
+    $endereco_sistema = 'Rua Wilton de Oliveira n606 Ituriano, CI - BR Planeta Venuz'    
 ?>

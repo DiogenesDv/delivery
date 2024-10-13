@@ -105,8 +105,8 @@
 </main>
 
 <footer class="rodape_">
-    <span>Rua X Numero X Bairro XXX - </span>
-    <span><a href="" class="link_whats"><i class="bi bi-whatsapp text-success"></i> 889 8190-9378</a></span>
+    <span><?php echo $endereco_sistema?></span>
+    <span><a target="_blank" href="http://api.whatsapp.com/send?1=pt_BR&phone=<?php echo $whatsapp_sistema?>" class="link_whats"><i class="bi bi-whatsapp text-success"></i> <?php echo $telefone_sistema?></a></span>
 </footer>
 </body>
 
