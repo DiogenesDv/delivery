@@ -4,11 +4,15 @@ require_once("conexao.php");
 $senha = '123';
 $senha_crip = md5($senha);
 
-//VERIFICAR SE EXISTE USUÁRIO ADMINISTRADOR CADASTRADO
+//VERIFICAR(pessquisar) SE EXISTE USUÁRIO ADMINISTRADOR CADASTRADO
 $query = $pdo->query("SELECT * FROM usuarios WHERE nivel = 'Administrador'");
+$res = $query->fetchAll(PDO::FETCH_ASSOC);
+$total_reg = @count($res);
 
-$pdo->query("INSERT INTO usuarios SET nome = 'Administrador', email = '$email_sistema', senha = '$senha', senha_crip = '$senha_crip', nivel = 'Administrador', ativo = 'Sim', data = curDate() ");
-
+//CRIAR(salvar) USUARIO ADMIN
+if($total_reg == 0){
+    $pdo->query("INSERT INTO usuarios SET nome = 'Administrador', email = '$email_sistema', senha = '$senha', senha_crip = '$senha_crip', nivel = 'Administrador', ativo = 'Sim', data = curDate() ");
+}
 ?>
 
 <!DOCTYPE html>
