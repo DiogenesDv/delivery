@@ -11,7 +11,7 @@ $total_reg = @count($res);
 
 //CRIAR(salvar) USUARIO ADMIN
 if($total_reg == 0){
-    $pdo->query("INSERT INTO usuarios SET nome = 'Administrador', email = '$email_sistema', senha = '$senha', senha_crip = '$senha_crip', nivel = 'Administrador', ativo = 'Sim', data = curDate() ");
+    $pdo->query("INSERT INTO usuarios SET nome = 'Administrador', email = '$email_sistema', cpf = '000.000.000-00', senha = '$senha', senha_crip = '$senha_crip', nivel = 'Administrador', ativo = 'Sim', data = curDate() ");
 }
 ?>
 
@@ -45,11 +45,11 @@ if($total_reg == 0){
                         </svg>
                     </div>
                     <div class="form-data" v-if="!submitted">
-                        <form method="POST" action="painel">
-                            <div class="forms-inputs mb-4"> <span>Email ou CPF</span> <input autocomplete="off" type="text" v-model="email" v-bind:class="{'form-control':true, 'is-invalid' : !validEmail(email) && emailBlured}" v-on:blur="emailBlured = true" class="form-control" required>
+                        <form method="POST" action="autenticar.php">
+                            <div class="forms-inputs mb-4"> <span>Email ou CPF</span> <input autocomplete="off" type="text" v-model="email" v-bind:class="{'form-control':true, 'is-invalid' : !validEmail(email) && emailBlured}" v-on:blur="emailBlured = true" class="form-control" name="email" required>
                                 <div class="invalid-feedback"></div>
                             </div>
-                            <div class="forms-inputs mb-4"> <span>Senha</span> <input autocomplete="off" type="password" v-model="password" v-bind:class="{'form-control':true, 'is-invalid' : !validPassword(password) && passwordBlured}" v-on:blur="passwordBlured = true" class="form-control" required>
+                            <div class="forms-inputs mb-4"> <span>Senha</span> <input autocomplete="off" type="password" v-model="password" v-bind:class="{'form-control':true, 'is-invalid' : !validPassword(password) && passwordBlured}" v-on:blur="passwordBlured = true" class="form-control" name="senha" required>
                                 <div class="invalid-feedback"></div>
                             </div>
                             <div class="mb-3"> <button type="submit" class="btn btn-primary w-100">Login</button> </div>
