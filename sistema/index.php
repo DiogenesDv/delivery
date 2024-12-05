@@ -11,7 +11,7 @@ $total_reg = @count($res);
 
 //CRIAR(salvar) USUARIO ADMIN
 if($total_reg == 0){
-    $pdo->query("INSERT INTO usuarios SET nome = 'Administrador', email = '$email_sistema', cpf = '000.000.000-00', senha = '$senha', senha_crip = '$senha_crip', nivel = 'Administrador', ativo = 'Sim', data = curDate() ");
+    $pdo->query("INSERT INTO usuarios SET nome = 'Administrador', email = '$email_sistema', cpf = '12345678900', senha = '$senha', senha_crip = '$senha_crip', nivel = 'Administrador', ativo = 'sim', data = curDate(), foto = 'sem-foto.png', telefone ='$telefone_sistema' ");
 }
 ?>
 
