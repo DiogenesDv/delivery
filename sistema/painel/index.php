@@ -397,7 +397,7 @@ if (@$_GET['pagina'] != "") {
 
 					<br>
 					<small>
-						<div id="msg-perfil" align="center"></div>
+						<div id="msg-perfil" align="center">---</div>
 					</small>
 				</div>
 				<div class="modal-footer">
@@ -548,7 +548,7 @@ if (@$_GET['pagina'] != "") {
 
 
 						<div class="col-md-4">
-							<div class="form-group">
+ 							<div class="form-group">
 								<label>Ícone (*Png)</label>
 								<input class="form-control" type="file" name="foto-icone" onChange="carregarImgIcone();" id="foto-icone">
 							</div>
@@ -585,7 +585,7 @@ if (@$_GET['pagina'] != "") {
 
 					<br>
 					<small>
-						<div id="msg-config" align="center"></div>
+						<div id="msg-config" align="center">...</div>
 					</small>
 				</div>
 				<div class="modal-footer">
@@ -597,3 +597,59 @@ if (@$_GET['pagina'] != "") {
 </div>
 
 
+
+<script type="text/javascript">
+	function carregarImgPerfil() {
+    var target = document.getElementById('target-usu');
+    var file = document.querySelector("#foto_perfil").files[0];
+    
+        var reader = new FileReader();
+
+        reader.onloadend = function () {
+            target.src = reader.result;
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+
+        } else {
+            target.src = "";
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    $("#form-perfil").submit(function() {
+
+        event.preventDefault(); 
+        var formData = new FormData(this);
+
+        $.ajax({
+            url: "editar-perfil.php",
+            type: 'POST',
+            data: formData,
+
+            success: function(mensagem) {
+                $('#msg-perfil').text('');
+                $('#msg-perfil').removeClass()
+                if (mensagem.trim() == "Editado com Sucesso") {
+                    
+					$('#btn-fechar-perfil').click();					
+
+                } else {
+
+                    $('#msg-perfil').addClass('text-danger')
+                    $('#msg-perfil').text(mensagem)
+                }
+
+
+            },
+
+            cache: false,
+            contentType: false,
+            processData: false,
+
+        });
+
+    });
+</script>
