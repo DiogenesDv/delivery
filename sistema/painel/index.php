@@ -635,6 +635,7 @@ if (@$_GET['pagina'] != "") {
                 if (mensagem.trim() == "Editado com Sucesso") {
                     
 					$('#btn-fechar-perfil').click();					
+					location.reload();   
 
                 } else {
 
