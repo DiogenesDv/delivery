@@ -8466,17 +8466,16 @@ h4.asd label {
 }
 /*--//responsive-design---*/
 
-/* Responsividade painel adm*/
 
-@media only screen and (max-width: 700px){
+
+@media only screen and (max-width: 700px) {
   .esc{
-    display: none;/*não exibira o conteudo*/
+    display:none;
   }
 
   .profile_details ul li ul.dropdown-menu.drp-mnu {
-    left: -50%;
+       left:-70%;
   }
+
+  
 }
-
-
-
