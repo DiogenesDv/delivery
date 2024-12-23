@@ -440,7 +440,7 @@ if(@$_GET['pagina'] != ""){
 					<div class="row">
 						<div class="col-md-3">							
 								<label>Nome do Projeto</label>
-								<input type="text" class="form-control" id="nome_sistema" name="nome_sistema" placeholder="Delivery Interativo" value="<?php echo @$nome_sistema ?>" required>							
+								<input type="text" class="form-control" id="nome_sistema" name="nome_sistema" placeholder="Delivery Interativo" value="<?php echo @$nome_sistema ?>" required><!--OBS: O @ é para o php ignorar se o campo nao existir no BD-->							
 						</div>
 
 						<div class="col-md-3">							
@@ -463,7 +463,7 @@ if(@$_GET['pagina'] != ""){
 
 					<div class="row">
 						<div class="col-md-6">							
-								<label>Endereço <small>(Rua Número Bairro e Cidade)</small></label>
+								<label>Endereço <small>(Rua e Número, Bairro e Cidade)</small></label>
 								<input type="text" class="form-control" id="endereco_sistema" name="endereco_sistema" placeholder="Rua X..." value="<?php echo @$endereco_sistema ?>" >							
 						</div>
 
@@ -539,7 +539,7 @@ if(@$_GET['pagina'] != ""){
 									</select>
 						</div>
 						<div class="col-md-9">
-							<label>Texto Fechamento <small>(Imprevisto)</small></label>
+							<label>Texto Fechamento <small>(Imprevisto(maximo 255 letras))</small></label>
 								<input maxlength="255" type="text" name="texto_fechamento" class="form-control" value="<?php echo @$texto_fechamento ?>" placeholder="Caso marque a opção de Estabelecimento Fechado, coloque aqui o texto que deseja aparecer">		
 						</div>
 					</div>
@@ -561,7 +561,7 @@ if(@$_GET['pagina'] != ""){
 
 							<div class="col-md-4">						
 								<div class="form-group"> 
-									<label>Ícone (*Png)</label> 
+									<label>Ícone (*PNG)</label> 
 									<input class="form-control" type="file" name="foto-icone" onChange="carregarImgIcone();" id="foto-icone">
 								</div>						
 							</div>
@@ -580,7 +580,7 @@ if(@$_GET['pagina'] != ""){
 					<div class="row">
 							<div class="col-md-4">						
 								<div class="form-group"> 
-									<label>Logo Relatório (*Jpg)</label> 
+									<label>Logo Relatório (*JPG)</label> 
 									<input class="form-control" type="file" name="foto-logo-rel" onChange="carregarImgLogoRel();" id="foto-logo-rel">
 								</div>						
 							</div>
