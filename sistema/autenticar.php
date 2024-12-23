@@ -5,11 +5,16 @@ require_once('conexao.php');
 //Recuperando valores
 $email = $_POST['email'];
 $senha = $_POST['senha'];
+$senha_crip = md5($senha);
 
 //echo $email;
 
 //VERIFICAR(pessquisar) SE EXISTE USUÁRIO ADMINISTRADOR CA-DASTRADO
- $query = $pdo->query("SELECT * FROM usuarios WHERE (email = '$email' or cpf = '$email') and senha = '$senha' ");
+$query = $pdo->prepare("SELECT * FROM usuarios WHERE (email = :email or cpf = :email) and senha_crip = :senha ");
+
+$query->bindValue(":email", "$email");
+$query->bindValue(":senha","$senha_crip");
+$query->execute();
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
 

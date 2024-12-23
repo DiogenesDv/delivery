@@ -5,7 +5,7 @@
         <nav class="navbar bg-body-tertiary fixed-top header_top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">
-                    <img src="img/pizza-svgrepo-com.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    <img src="img/logo_rel.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                     <?php echo $nome_sistema?>
                 </a>
 
