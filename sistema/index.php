@@ -22,7 +22,7 @@ if($total_reg == 0){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- icone -->
-    <link rel="shortcut icon" href="../img/pizza-svgrepo-com.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/<?php echo $favicon_sistema?>" type="image/x-icon">
     <!-- Bootstrap com js para estilização,icones,animaçoes e css-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -38,13 +38,14 @@ if($total_reg == 0){
         <div class="row d-flex justify-content-center">
             <div class="col-md-6">
                 <div class="card px-5 py-5" id="form1">
-                    <div class="text-center titulo_tela_login">
-                        <h5 style="color: #4d97e5;">ADM Delivery</h5>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" style="margin-bottom: 10px; color: #4d97e5;" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
-                        </svg>
-                    </div>
                     <div class="form-data" v-if="!submitted">
+                        <div class="text-center titulo_tela_login">
+                            <div class="logo">
+                                <img src="../img/<?php echo $logo_sistema?>" alt="Imagem de login" width="40px">
+                            </div>
+                            <h5 style="color: #4d97e5;">ADM Delivery</h5>
+                            
+                        </div>
                         <form method="POST" action="autenticar.php">
                             <div class="forms-inputs mb-4"> <span>Email ou CPF</span> <input autocomplete="off" type="text" v-model="email" v-bind:class="{'form-control':true, 'is-invalid' : !validEmail(email) && emailBlured}" v-on:blur="emailBlured = true" class="form-control" name="email" required>
                                 <div class="invalid-feedback"></div>
