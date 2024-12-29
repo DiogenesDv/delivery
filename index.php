@@ -107,7 +107,7 @@
 <footer class="rodape_">
         <div>
             <?php if ($endereco_sistema == "") { ?>
-                <span class="esc"><?php echo $nome_sistema ?></span>
+                <span class="esc"><?php echo $nome_sistema ?> / </span>
             <?php } else { ?>
                 <span><?php echo $endereco_sistema ?></span>
             <?php } ?>
@@ -115,13 +115,13 @@
 
             <span>
                 <a target="_blank" href="http://api.whatsapp.com/send?1=pt_BR&phone=<?php echo $whatsapp_sistema ?>" class="link_whats">
-                    <i class="bi bi-whatsapp text-success"></i> <?php echo $telefone_sistema ?>
+                    <i class="bi bi-whatsapp text-success"> <?php echo $telefone_sistema ?></i>
                 </a>
             </span>
             /
             <span>
                 <a target="_blank" href="<?php echo $instagram_sistema ?>" class="link_whats">
-                    <i class="bi bi-instagram text-primary"> @Instagram</i>
+                    <i class="bi bi-instagram text-danger"> @Instagram</i>
                 </a>
             </span>
         </div>
