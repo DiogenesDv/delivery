@@ -74,7 +74,8 @@ if(@$_FILES['foto']['name'] != ""){
 }
 
 
-$query = $pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email, cpf = :cpf, senha = :senha, senha_crip = '$senha_crip', foto = '$foto', telefone = :telefone ");
+$query = $pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email, cpf = :cpf, 
+senha = :senha, senha_crip = '$senha_crip', foto = '$foto', telefone = :telefone ");
 
 $query->bindValue(":nome", "$nome");
 $query->bindValue(":email", "$email");

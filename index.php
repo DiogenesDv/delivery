@@ -5,8 +5,8 @@
         <nav class="navbar bg-body-tertiary fixed-top header_top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">
-                    <img src="img/<?php echo $logo_sistema?>" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                    <?php echo $nome_sistema?>
+                    <img src="img/<?php echo $logo_sistema ?>" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    <?php echo $nome_sistema ?>
                 </a>
 
                 <a class="text-dark" href="#popup1">
@@ -105,8 +105,26 @@
 </main>
 
 <footer class="rodape_">
-    <span><?php echo $endereco_sistema?></span>
-    <span><a target="_blank" href="http://api.whatsapp.com/send?1=pt_BR&phone=<?php echo $whatsapp_sistema?>" class="link_whats"><i class="bi bi-whatsapp text-success"></i> <?php echo $telefone_sistema?></a></span>
+        <div>
+            <?php if ($endereco_sistema == "") { ?>
+                <span class="esc"><?php echo $nome_sistema ?></span>
+            <?php } else { ?>
+                <span><?php echo $endereco_sistema ?></span>
+            <?php } ?>
+
+
+            <span>
+                <a target="_blank" href="http://api.whatsapp.com/send?1=pt_BR&phone=<?php echo $whatsapp_sistema ?>" class="link_whats">
+                    <i class="bi bi-whatsapp text-success"></i> <?php echo $telefone_sistema ?>
+                </a>
+            </span>
+            /
+            <span>
+                <a target="_blank" href="<?php echo $instagram_sistema ?>" class="link_whats">
+                    <i class="bi bi-instagram text-primary"> @Instagram</i>
+                </a>
+            </span>
+        </div>
 </footer>
 </body>
 
