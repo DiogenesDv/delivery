@@ -1,0 +1,56 @@
+body {
+    background: #4d97e5;
+}
+
+.card {
+    border: none;
+    height: 420px
+}
+
+.forms-inputs {
+    position: relative
+}
+
+.forms-inputs span {
+    position: absolute;
+    top: -18px;
+    left: 10px;
+    background-color: #fff;
+    padding: 5px 10px;
+    font-size: 15px
+}
+
+.forms-inputs input {
+    height: 50px;
+    border: 2px solid #eee
+}
+
+.forms-inputs input:focus {
+    box-shadow: none;
+    outline: none;
+    border: 2px solid #000
+}
+
+.btn {
+    height: 50px
+}
+
+.success-data {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    cursor: pointer;
+}
+.success-data:hover{
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.titulo_tela_login{
+    margin: 10px;
+    font-size: 12px;
+}
+
+.link_recuperar_senha{
+    text-decoration: none;
+}
