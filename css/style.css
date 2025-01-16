@@ -442,3 +442,7 @@ body {
   padding-left: 15px;
 }
 
+/*RETIRAR SCROLL DO ELEMENTO ou PAGINA*/
+.sem-scroll{
+  overflow: hidden;
+}

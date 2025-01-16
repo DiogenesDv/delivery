@@ -1,6 +1,6 @@
 <?php require_once("cabecalho.php") ?>
 
-<main class="main_container">
+<main class="main_container sem-scroll">
     <header>
         <nav class="navbar bg-body-tertiary fixed-top header_top">
             <div class="container-fluid">
@@ -26,9 +26,9 @@
         <?php require_once("carrinho.php") ?>
     </header>
 
-    <section class="row cards_card">
+    <section class="row cards_card ">
         <div class="menu-title_">
-            <h3>- Cardápio -</h3>
+            <h3 class="sem-scroll">- Cardápio -</h3>
         </div>
     </section>
 
@@ -36,7 +36,7 @@
 
         <div class="col-md-3 col-5 card_ vermelho_ ">
             <a href="itens.php" class="links_cards_">
-                <h3 class="card-title_">
+                <h3 class="card-title_ sem-scroll">
                     Pizzas
                 </h3>
             </a>
@@ -44,7 +44,7 @@
 
         <div class="col-md-3 col-5 card_ vermelho_ ">
             <a href="" class="links_cards_">
-                <h3 class="card-title_">
+                <h3 class="card-title_ sem-scroll">
                     Hamburgueres
                 </h3>
             </a>
@@ -52,7 +52,7 @@
 
         <div class="col-md-3 col-5 card_ rosa_">
             <a href="" class="links_cards_">
-                <h3 class="card-title_">
+                <h3 class="card-title_ sem-scroll">
                     Lanches
                 </h3>
             </a>
@@ -60,42 +60,42 @@
         </div>
         <div class="col-md-3 col-5 card_ verde_ ">
             <a href="" class="links_cards_">
-                <h3 class="card-title_">
+                <h3 class="card-title_ sem-scroll">
                     Bebidas
                 </h3>
             </a>
         </div>
         <div class="col-md-3 col-5 card_ azul_">
             <a href="" class="links_cards_">
-                <h3 class="card-title_">
+                <h3 class="card-title_ sem-scroll">
                     Pizzas
                 </h3>
             </a>
         </div>
         <div class="col-md-3 col-5 card_ vermelho_ ">
             <a href="" class="links_cards_">
-                <h3 class="card-title_">
+                <h3 class="card-title_ sem-scroll">
                     Hamburgueres
                 </h3>
             </a>
         </div>
         <div class="col-md-3 col-5 card_ rosa_">
             <a href="" class="links_cards_">
-                <h3 class="card-title_">
+                <h3 class="card-title_ sem-scroll">
                     Lanches
                 </h3>
             </a>
         </div>
         <div class="col-md-3 col-5 card_ verde_ ">
             <a href="" class="links_cards_">
-                <h3 class="card-title_">
+                <h3 class="card-title_ sem-scroll">
                     Bebidas
                 </h3>
             </a>
         </div>
         <div class="col-md-3 col-5 card_ verde_ ">
             <a href="" class="links_cards_">
-                <h3 class="card-title_">
+                <h3 class="card-title_ sem-scroll">
                     Sobre mesas
                 </h3>
             </a>
