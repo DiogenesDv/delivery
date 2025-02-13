@@ -1,13 +1,15 @@
-$(document).ready(function(){
+$(document).ready(function() {    
     listar();
-});
+    
+} );
 
-function listar() {
+
+function listar(){
     $.ajax({
-        url: 'paginas/'+pag+"/listar.php",
-        method:'POST',
+        url: 'paginas/' + pag + "/listar.php",
+        method: 'POST',
         data: $('#form').serialize(),
-        dataType:"html",
+        dataType: "html",
 
         success:function(result){
             $("#listar").html(result);
