@@ -1,65 +1,69 @@
 <?php require_once("cabecalho.php") ?>
 
-<nav class="navbar bg-body-tertiary fixed-top header_top">
-  <div class="container-fluid">
-    <span>Pizza Calabresa</span>
-    <div class=".icone_seta_voltar_">
-      <a class="navbar-brand" href="itens.php" alt="Voltar" title="Botão Voltar">
-        <big><i class="bi bi-arrow-left-circle icone_seta_voltar_"></i></big>
-      </a>
-    </div>
-    <?php require_once("carrinho.php") ?>
-  </div>
-</nav>
+<div class="main-container">
 
-<ol class="list-group list-group-numbered lista_itens_">
-<div class="itens_topo_">
-  <span>Itens - VARIAÇÕES</span>
+	<nav class="navbar bg-light fixed-top" style="box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.20);">
+		<div class="container-fluid">
+			<div class="navbar-brand" >
+				<a href="itens.php"><big><i class="bi bi-arrow-left"></i></big></a>
+				<span style="margin-left: 15px">PIZZA CALABRESA</span>
+			</div>
+
+			<?php require_once("icone-carrinho.php") ?>
+
+		</div>
+	</nav>
+
+
+
+
+	<ol class="list-group " style="margin-top: 65px">
+
+		<a href="adicionais.php" class="link-neutro">
+		<li class="list-group-item d-flex justify-content-between align-items-start"> 
+			<div class="me-auto">
+				<div class="fw-bold titulo-item">Pequena</div>
+				<span class="valor-item">R$ 25,00</span>
+			</div>
+			
+		</li>
+		</a>
+
+
+		<a href="#" class="link-neutro">
+		<li class="list-group-item d-flex justify-content-between align-items-start"> 
+			<div class="me-auto">
+				<div class="fw-bold titulo-item">Média</div>
+				<span class="valor-item">R$ 30,00</span>
+			</div>
+			
+		</li>
+		</a>
+
+
+		
+		<a href="#" class="link-neutro">
+		<li class="list-group-item d-flex justify-content-between align-items-start"> 
+			<div class="me-auto">
+				<div class="fw-bold titulo-item">Grande</div>
+				<span class="valor-item">R$ 35,00</span>
+			</div>
+			
+		</li>
+		</a>
+
+	</ol>
+
+	<hr>
+	<div class="conteudo-descricao-item">
+	<div class="titulo-descricao-item"><b>Descrição Pizza Calabresa</b></div>
+	<p class="descricao-item">Pizza de Calabresa com borda recheada com cheddar, massa fina, bem recheada, tendo como ingredientes tomate, cebola, palmito, calabresa defumada e queijo.</p>
+	</div>
+	<div >
+		<img class="imagem-produto" src="img/produtos/calabresa.jpg">
+	</div>
+
 </div>
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <a href="adicionais.php" class="link-neutro_">
-        <div class="fw-bold">Pequena</div>
-        <span class="fw-bold valor_item_">R$ 25,00</span>
-        <spam class="descricao_item_"></spam>
-    </div>
-    </a>
-  </li>
-
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <a href="variacoes.php" class="link-neutro_">
-        <div class="fw-bold">Media</div>
-        <span class="fw-bold valor_item_">R$ 30,00</span>
-        <spam class="descricao_item_"></spam>
-    </div>
-    </a>
-  </li>
-
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <a href="variacoes.php" class="link-neutro_">
-        <div class="fw-bold">Grande</div>
-        <span class="fw-bold valor_item_">R$ 35,00</span>
-        <spam class="descricao_item_"></spam>
-    </div>
-    </a>
-  </li>
-
-</ol>
-<hr class="hr_">
-<div class="titulo_descricao_item_">
-  <span>Descrição Pizza  Calabresa</span> 
-  <br>
-  <i class="descricao_item_">
-    Pizza de calabresa com calabresa, e calabresa de calabre com tempero de calabresa, com molho de calabresa e recheiro de calabresa calabresada!
-  </i>
-</div>
-<div>
-  <img class="imagem-produtos_" src="img/produtos/calabresa.jpg" alt="">
-</div>
-
 
 </body>
-
 </html>

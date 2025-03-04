@@ -48,7 +48,7 @@ if($total_reg > 0){
 
 
 //SCRIPT PARA SUBIR FOTO NO SERVIDOR
-$nome_img = date('d-m-Y_H-i-s') .'-'.@$_FILES['foto']['name'];
+$nome_img = date('d-m-Y H:i:s') .'-'.@$_FILES['foto']['name'];
 $nome_img = preg_replace('/[ :]+/' , '-' , $nome_img);
 
 $caminho = 'images/perfil/' .$nome_img;
@@ -74,8 +74,7 @@ if(@$_FILES['foto']['name'] != ""){
 }
 
 
-$query = $pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email, cpf = :cpf, 
-senha = :senha, senha_crip = '$senha_crip', foto = '$foto', telefone = :telefone ");
+$query = $pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email, cpf = :cpf, senha = :senha, senha_crip = '$senha_crip', foto = '$foto', telefone = :telefone ");
 
 $query->bindValue(":nome", "$nome");
 $query->bindValue(":email", "$email");

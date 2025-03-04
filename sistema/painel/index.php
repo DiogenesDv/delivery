@@ -112,6 +112,29 @@ if(@$_GET['pagina'] != ""){
 	</script>
 	<!-- //pie-chart --><!-- index page sales reviews visitors pie chart -->
 
+
+	<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/> 
+<script type="text/javascript" src="DataTables/datatables.min.js"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<style type="text/css">
+		.select2-selection__rendered {
+			line-height: 36px !important;
+			font-size:16px !important;
+			color:#666666 !important;
+
+		}
+
+		.select2-selection {
+			height: 36px !important;
+			font-size:16px !important;
+			color:#666666 !important;
+
+		}
+	</style>  
+
 	
 </head> 
 <body class="cbp-spmenu-push">
@@ -145,7 +168,64 @@ if(@$_GET['pagina'] != ""){
 								</a>
 								<ul class="treeview-menu">
 									<li><a href="index.php?pagina=usuarios"><i class="fa fa-angle-right"></i> Usuários</a></li>
-									<li><a href="#"><i class="fa fa-angle-right"></i> Funcionários</a></li>
+									<li><a href="index.php?pagina=funcionarios"><i class="fa fa-angle-right"></i> Funcionários</a></li>
+
+									<li><a href="index.php?pagina=clientes"><i class="fa fa-angle-right"></i> Clientes</a></li>
+
+									<li><a href="index.php?pagina=fornecedores"><i class="fa fa-angle-right"></i> Fornecedores</a></li>
+
+								</ul>
+							</li>
+
+							<li class="treeview">
+								<a href="#">
+									<i class="fa fa-plus"></i>
+									<span>Cadastros</span>
+									<i class="fa fa-angle-left pull-right"></i>
+								</a>
+								<ul class="treeview-menu">
+
+									<li><a href="index.php?pagina=bairros"><i class="fa fa-angle-right"></i> Bairros / Locais</a></li>
+
+									<li><a href="index.php?pagina=cargos"><i class="fa fa-angle-right"></i> Cargos</a></li>
+									
+								</ul>
+							</li>
+
+
+
+							<li class="treeview">
+								<a href="#">
+									<i class="fa fa-cutlery"></i>
+									<span>Produtos</span>
+									<i class="fa fa-angle-left pull-right"></i>
+								</a>
+								<ul class="treeview-menu">
+									<li><a href="index.php?pagina=produtos"><i class="fa fa-angle-right"></i> Produtos</a></li>
+
+									<li><a href="index.php?pagina=categorias"><i class="fa fa-angle-right"></i> Categorias</a></li>
+
+									<li><a href="index.php?pagina=estoque"><i class="fa fa-angle-right"></i> Estoque</a></li>
+									<li><a href="index.php?pagina=entradas"><i class="fa fa-angle-right"></i> Entradas</a></li>
+									<li><a href="index.php?pagina=saidas"><i class="fa fa-angle-right"></i> Saídas</a></li>
+									
+								</ul>
+							</li>
+
+
+
+
+							<li class="treeview">
+								<a href="#">
+									<i class="fa fa-file-pdf-o"></i>
+									<span>Relatórios</span>
+									<i class="fa fa-angle-left pull-right"></i>
+								</a>
+								<ul class="treeview-menu">
+									<li><a href="rel/produtos_class.php" target="_blank"><i class="fa fa-angle-right"></i> Produtos</a></li>
+
+									
+									
 								</ul>
 							</li>
 
@@ -216,7 +296,7 @@ if(@$_GET['pagina'] != ""){
 
 
 					</ul>
-				<!-- /*<div class="clearfix"> </div> -->
+					<div class="clearfix"> </div>
 				</div>
 				
 			</div>
@@ -227,13 +307,12 @@ if(@$_GET['pagina'] != ""){
 						<li class="dropdown profile_details_drop">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 								<div class="profile_img">	
-									<span class="prfil-img"><img src="images/perfil/<?php echo $foto_usuario?>" alt="" width="50px" height="50px"> </span> 
+									<span class="prfil-img"><img src="images/perfil/<?php echo $foto_usuario ?>" alt="" width="50px" height="50px"> </span> 
 									<div class="user-name esc">
 										<p><?php echo $nome_usuario ?></p>
 										<span><?php echo $nivel_usuario ?></span>
 									</div>
 									<i class="fa fa-angle-down lnr"></i>
-			
 									<i class="fa fa-angle-up lnr"></i>
 									<div class="clearfix"></div>	
 								</div>	
@@ -343,7 +422,7 @@ if(@$_GET['pagina'] != ""){
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			<form id="form-perfil" enctype="multipart/form-data">
+			<form id="form-perfil">
 			<div class="modal-body">
 				
 
@@ -440,7 +519,7 @@ if(@$_GET['pagina'] != ""){
 					<div class="row">
 						<div class="col-md-3">							
 								<label>Nome do Projeto</label>
-								<input type="text" class="form-control" id="nome_sistema" name="nome_sistema" placeholder="Delivery Interativo" value="<?php echo @$nome_sistema ?>" required><!--OBS: O @ é para o php ignorar se o campo nao existir no BD-->							
+								<input type="text" class="form-control" id="nome_sistema" name="nome_sistema" placeholder="Delivery Interativo" value="<?php echo @$nome_sistema ?>" required>							
 						</div>
 
 						<div class="col-md-3">							
@@ -463,7 +542,7 @@ if(@$_GET['pagina'] != ""){
 
 					<div class="row">
 						<div class="col-md-6">							
-								<label>Endereço <small>(Rua e Número, Bairro e Cidade)</small></label>
+								<label>Endereço <small>(Rua Número Bairro e Cidade)</small></label>
 								<input type="text" class="form-control" id="endereco_sistema" name="endereco_sistema" placeholder="Rua X..." value="<?php echo @$endereco_sistema ?>" >							
 						</div>
 
@@ -539,7 +618,7 @@ if(@$_GET['pagina'] != ""){
 									</select>
 						</div>
 						<div class="col-md-9">
-							<label>Texto Fechamento <small>(Imprevisto(maximo 255 letras))</small></label>
+							<label>Texto Fechamento <small>(Imprevisto)</small></label>
 								<input maxlength="255" type="text" name="texto_fechamento" class="form-control" value="<?php echo @$texto_fechamento ?>" placeholder="Caso marque a opção de Estabelecimento Fechado, coloque aqui o texto que deseja aparecer">		
 						</div>
 					</div>
@@ -561,7 +640,7 @@ if(@$_GET['pagina'] != ""){
 
 							<div class="col-md-4">						
 								<div class="form-group"> 
-									<label>Ícone (*PNG)</label> 
+									<label>Ícone (*Png)</label> 
 									<input class="form-control" type="file" name="foto-icone" onChange="carregarImgIcone();" id="foto-icone">
 								</div>						
 							</div>
@@ -580,7 +659,7 @@ if(@$_GET['pagina'] != ""){
 					<div class="row">
 							<div class="col-md-4">						
 								<div class="form-group"> 
-									<label>Logo Relatório (*JPG)</label> 
+									<label>Logo Relatório (*Jpg)</label> 
 									<input class="form-control" type="file" name="foto-logo-rel" onChange="carregarImgLogoRel();" id="foto-logo-rel">
 								</div>						
 							</div>
@@ -605,8 +684,6 @@ if(@$_GET['pagina'] != ""){
 		</div>
 	</div>
 </div>
-
-
 
 
 

@@ -1,99 +1,101 @@
 <?php require_once("cabecalho.php") ?>
 
-<nav class="navbar bg-body-tertiary fixed-top header_top">
-  <div class="container-fluid">
-    <span>Pizza Calabresa(P)</span>
-    <div class=".icone_seta_voltar_">
-      <a class="navbar-brand" href="itens.php" alt="Voltar" title="Botão Voltar">
-        <big><i class="bi bi-arrow-left-circle icone_seta_voltar_"></i></big>
-      </a>
-    </div>
-    <?php require_once("carrinho.php") ?>
-  </div>
-</nav>
+<div class="main-container">
 
-<ol class="list-group lista_itens_">
+	<nav class="navbar bg-light fixed-top" style="box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.20);">
+		<div class="container-fluid">
+			<div class="navbar-brand" >
+				<a href="itens.php"><big><i class="bi bi-arrow-left"></i></big></a>
+				<span style="margin-left: 15px">Pizza Calabresa - Tamanho P</span>
+			</div>
 
-  <div class="itens_topo_">
-    <span>Itens - variasções - ADICIONAIS</span>
-  </div>
+			<?php require_once("icone-carrinho.php") ?>
 
-  <div class="titulo-itens-margins_ list-group-item">
-    <span>Inserir Adicionais?</span>
-  </div>
+		</div>
+	</nav>
 
-  <a href="adicionais.php" class="link-neutro_">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <span class="">Borda de chocolate <i class="fw-bold valor_item_">+ R$ 5,00</i></span>
-      <i class="bi bi-square"></i>
-    </li>
-  </a>
+	<div class="titulo-itens">
+		Inserir Adicionais?
+	</div>
 
-  <a href="adicionais.php" class="link-neutro_">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <span class="">Borda de Catupiri <i class="fw-bold valor_item_">+ R$ 4,00</i></span>
-      <i class="bi bi-square"></i>
-    </li>
-  </a>
 
-  <a href="adicionais.php" class="link-neutro_">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <span class="">Palmito <i class="fw-bold valor_item_">+ R$ 2,00</i></span>
-      <i class="bi bi-square"></i>
-    </li>
-  </a>
 
-</ol>
 
-<div class="total_">
-  <b>R$ 0,0</b>
+	<ol class="list-group">
+
+		<a href="adicionais.php" class="link-neutro">
+		<li class="list-group-item">		    	
+				Bacon <span class="valor-item">(R$ 5,00)</span>
+				<i class="bi bi-square direita"></i>			
+		</li>
+		</a>
+
+
+		<a href="adicionais.php" class="link-neutro">
+		<li class="list-group-item">		    	
+				Cheddar <span class="valor-item">(R$ 5,00)</span>
+				<i class="bi bi-square direita"></i>			
+		</li>
+		</a>
+
+
+		
+		<a href="adicionais.php" class="link-neutro">
+		<li class="list-group-item">		    	
+				Palmito <span class="valor-item">(R$ 4,00)</span>
+				<i class="bi bi-square direita"></i>			
+		</li>
+		</a>
+
+	</ol>
+
+
+	<div class="total">
+		R$ <b>25,00</b>
+	</div>
+
+
+
+	<div class="titulo-itens-2">
+		Remover Ingredientes?
+	</div>
+
+
+	<ol class="list-group">
+
+		<a href="adicionais.php" class="link-neutro">
+		<li class="list-group-item">		    	
+				Cebola
+				<i class="bi bi-check-square-fill direita"></i>			
+		</li>
+		</a>
+
+
+		<a href="adicionais.php" class="link-neutro">
+		<li class="list-group-item">		    	
+				Tomate 
+				<i class="bi bi-check-square-fill direita"></i>			
+		</li>
+		</a>
+
+
+		
+		<a href="adicionais.php" class="link-neutro">
+		<li class="list-group-item">		    	
+				Palmito 
+				<i class="bi bi-check-square-fill direita"></i>			
+		</li>
+		</a>
+
+	</ol>
+
+	<div class="d-grid gap-2 mt-4">
+		<a href='observacoes.php' class="btn btn-primary">Avançar</a>
+	</div>
+
+
+
 </div>
 
-<ol class="list-group lista_itens_2">
-
-  <div class="list-group titulo-itens-margins_ list-group-item">
-    <span>Remover ingredientes?</span>
-  </div>
-
-  <a href="adicionais.php" class="link-neutro_">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <span class="">Tomate</span>
-      <i class="bi bi-check-square-fill"></i>
-    </li>
-  </a>
-
-  <a href="adicionais.php" class="link-neutro_">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <span class="">Azeitona</span>
-      <i class="bi bi-check-square-fill"></i>
-    </li>
-  </a>
-
-  <a href="adicionais.php" class="link-neutro_">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <span class="">Oregano</span>
-      <i class="bi bi-check-square-fill"></i>
-    </li>
-  </a>
-
-  <a href="adicionais.php" class="link-neutro_">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <span class="">Oregano</span>
-      <i class="bi bi-check-square-fill"></i>
-    </li>
-  </a>
-
-  <a href="adicionais.php" class="link-neutro_">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <span class="">Oregano</span>
-      <i class="bi bi-check-square-fill"></i>
-    </li>
-  </a>
-</ol>
-
-<div class="botao_ d-grid">
- <a href="observacoes.php" class="btn btn-primary">Avançar<i class="bi bi-arrow-bar-right"></i></a>
-</div>
 </body>
-
 </html>

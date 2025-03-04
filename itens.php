@@ -1,46 +1,61 @@
 <?php require_once("cabecalho.php") ?>
 
-<nav class="navbar bg-body-tertiary fixed-top header_top">
-  <div class="container-fluid">
-    <span>Pizzas</span>
-    <div class=".icone_seta_voltar_">
-      <a class="navbar-brand" href="index.php" alt="Voltar" title="Botão Voltar">
-        <big><i class="bi bi-arrow-left-circle icone_seta_voltar_"></i></big>
-      </a>
-    </div>
+<div class="main-container">
 
-    <?php require_once("carrinho.php") ?>
-  </div>
-</nav>
+	<nav class="navbar bg-light fixed-top" style="box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.20);">
+		<div class="container-fluid">
+			<div class="navbar-brand" >
+				<a href="index.php"><big><i class="bi bi-arrow-left"></i></big></a>
+				<span style="margin-left: 15px">PIZZA</span>
+			</div>
 
-<ol class="list-group list-group-numbered lista_itens_">
-<div class="itens_topo_">
-  <span>ITENS</span>
+			<?php require_once("icone-carrinho.php") ?>
+
+		</div>
+	</nav>
+
+
+
+
+	<ol class="list-group " style="margin-top: 65px">
+
+		<a href="variacoes.php" class="link-neutro">
+		<li class="list-group-item d-flex justify-content-between align-items-start"> 
+			<div class="me-auto">
+				<div class="fw-bold titulo-item">Pizza Calabresa</div>
+				<span class="valor-item">(P) R$ 25,00 / (M) R$ 30,00 / (G) R$ 35,00</span>
+			</div>
+			
+		</li>
+		</a>
+
+
+		<a href="#" class="link-neutro">
+		<li class="list-group-item d-flex justify-content-between align-items-start"> 
+			<div class="me-auto">
+				<div class="fw-bold titulo-item">Pizza Frango Catupury</div>
+				<span class="valor-item">(P) R$ 25,00 / (M) R$ 30,00 / (G) R$ 35,00</span>
+			</div>
+			
+		</li>
+		</a>
+
+
+		
+		<a href="#" class="link-neutro">
+		<li class="list-group-item d-flex justify-content-between align-items-start"> 
+			<div class="me-auto">
+				<div class="fw-bold titulo-item">Pizza Cheddar com Bacon</div>
+				<span class="valor-item">(P) R$ 29,00 / (M) R$ 36,00 / (G) R$ 42,00</span>
+			</div>
+			
+		</li>
+		</a>
+
+	</ol>
+
+
 </div>
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <a href="variacoes.php" class="link-neutro_">
-        <div class="fw-bold">Pizza de Calabresa</div>
-        <span class="fw-bold valor_item_">(P)R$ 25,00  (M)R$ 30,00 (G)R$35,00</span>
-        <spam class="descricao_item_">Broda de queijo vermelho</spam>
-    </div>
-    </a>
-  </li>
-
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <a href="variacoes.php" class="link-neutro_">
-        <div class="fw-bold">Pizza queijo</div>
-        <span class="fw-bold valor_item_">(P)R$ 30,00  (M)R$ 35,00 (G)R$40,00</span>
-        <spam class="descricao_item_">Borda de queijo branco</spam>
-    </div>
-    </a>
-  </li>
-
-</ol>
-
-
 
 </body>
-
 </html>
