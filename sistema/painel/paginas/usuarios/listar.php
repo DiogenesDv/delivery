@@ -2,7 +2,6 @@
 require_once("../../../conexao.php");
 $tabela = 'usuarios';
 
-
 $query = $pdo->query("SELECT * FROM $tabela order by id desc");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
@@ -64,13 +63,14 @@ echo <<<HTML
 <td class="esc">{$nivel}</td>
 <td class="esc"><img src="images/perfil/{$foto}" width="30px"></td>
 <td>
-	<big><a href="#" onclick="editar('{$id}','{$nome}', '{$email}', '{$senha}', '{$nivel}', '{$foto}', '{$telefone}', '{$cpf}')" title="Editar Dados"><i class="fa fa-edit text-primary"></i></a></big>
 
-	<big><a href="#" onclick="mostrar('{$nome}', '{$email}', '{$cpf}', '{$senha}', '{$nivel}', '{$dataF}', '{$ativo}', '{$telefone}', '{$foto}')" title="Ver Dados"><i class="fa fa-info-circle text-secondary"></i></a></big>
+<big><big><big><a href="#" onclick="editar('{$id}','{$nome}', '{$email}', '{$senha}', '{$nivel}', '{$foto}', '{$telefone}', '{$cpf}')" title="Editar Dados"><i class="fa fa-edit text-primary"></i></a>
+				
+	<a href="#" onclick="mostrar('{$nome}', '{$email}', '{$cpf}', '{$senha}', '{$nivel}', '{$dataF}', '{$ativo}', '{$telefone}', '{$foto}')" title="Ver Dados"><i class="fa fa-info-circle text-secondary"></i></a>
 
 
 	<li class="dropdown head-dpdn2" style="display: inline-block;">
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><big><i class="fa fa-trash-o text-danger"></i></big></a>
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-trash-o text-danger"></i></a>
 
 		<ul class="dropdown-menu" style="margin-left:-230px;">
 		<li>
@@ -82,7 +82,7 @@ echo <<<HTML
 		</li>
 
 
-		<big><a href="#" onclick="ativar('{$id}', '{$acao}')" title="{$titulo_link}"><i class="fa {$icone} text-success"></i></a></big>
+		<a href="#" onclick="ativar('{$id}', '{$acao}')" title="{$titulo_link}"><i class="fa {$icone} text-success"></i></a></big></big></big>
 
 
 
