@@ -373,8 +373,8 @@ $pag = 'produtos';
 					<div class="row">
 					<div class="col-md-4">
 							<div class="form-group">
-								<label for="exampleInputEmail1">Sigla</label>
-								<input maxlength="5" type="text" class="form-control" id="sigla" name="sigla" placeholder="P / M / G" >    
+								<small><label for="exampleInputEmail1">Sigla tamanho/gramas/kl</label></small>
+								<input maxlength="5" type="text" class="form-control" id="sigla" name="sigla" placeholder="P/M/G,32g, 2kl ..." >    
 							</div> 	
 						</div>	
 
