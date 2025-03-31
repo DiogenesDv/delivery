@@ -398,7 +398,7 @@ $pag = 'produtos';
 						<div class="col-md-9">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Descrição</label>
-								<input maxlength="50" type="text" class="form-control" id="descricao_var" name="descricao" placeholder="8 Fatias" >    
+								<input maxlength="50" type="text" class="form-control" id="descricao_var" name="descricao" placeholder="8 Fatias ..." >    
 							</div> 	
 						</div>
 
@@ -451,13 +451,14 @@ $pag = 'produtos';
 				<div class="row">
 
 						<div class="col-md-8">
-							<div class="form-group">								
-								<input maxlength="50" type="text" class="form-control" id="ingrediente" name="nome" placeholder="Ingrediente" required>    
+							<div class="form-group">			
+								<label for="exampleInpultEmail1">Nome</label>					
+								<input maxlength="50" type="text" class="form-control" id="ingrediente" name="nome" placeholder="Nome do ingrediente" required>    
 							</div> 	
 						</div>
 
 						<div class="col-md-4">
-							<button type="submit" class="btn btn-primary">Salvar</button>
+							<button type="submit" class="btn btn-primary" style="margin-top:20px;">Salvar</button>
 						
 						</div>
 					</div>	
