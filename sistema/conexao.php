@@ -4,6 +4,12 @@ $senha = '';
 $banco = 'delivery';
 $servidor = 'localhost';
 
+$url_sistema = "http://$_SERVER[HTTP_HOST]/";
+$url = explode("//",$url_sistema);
+if ($url[1] == 'localhost/') {
+    $url_sistema = "http://$_SERVER[HTTP_HOST]/delivery/";
+}
+
 date_default_timezone_set('America/Sao_Paulo');
 
 try {

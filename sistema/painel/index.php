@@ -687,7 +687,6 @@ if(@$_GET['pagina'] != ""){
 
 
 
-
 <script type="text/javascript">
 	function carregarImgPerfil() {
     var target = document.getElementById('target-usu');
