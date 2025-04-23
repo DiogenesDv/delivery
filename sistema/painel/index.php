@@ -212,6 +212,17 @@ if(@$_GET['pagina'] != ""){
 								</ul>
 							</li>
 
+							<li class="treeview">
+								<a href="#">
+									<i class="fa fa-dollar"></i>
+									<span>Financeiro</span>
+									<i class="fa fa-angle-left pull-right"></i>
+								</a>
+								<ul class="treeview-menu">
+									<li><a href="index.php?pagina=pagar"><i class="fa fa-angle-right"></i> Contas à Pagar</a></li>									
+									<li><a href="index.php?pagina=receber"><i class="fa fa-angle-right"></i> Contas à Receber</a></li>									
+								</ul>
+							</li>
 
 
 

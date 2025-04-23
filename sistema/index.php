@@ -15,7 +15,6 @@ $pdo->query("INSERT INTO usuarios SET nome = 'Administrador', email = '$email_si
 
 
 //VERIFICAR SE EXISTE CARGO ADMIN CADASTRADO
-
 $query = $pdo->query("SELECT * FROM cargos WHERE nome = 'Administrador'");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
