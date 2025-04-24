@@ -13,6 +13,7 @@ if($foto != "sem-foto.jpg"){
 	@unlink('../../images/produtos/'.$foto);
 }
 
+
 $pdo->query("DELETE from $tabela where id = '$id'");
 echo 'Excluído com Sucesso';
 

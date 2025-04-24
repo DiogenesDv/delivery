@@ -54,7 +54,7 @@ $pdo->query("UPDATE produtos SET estoque = '$total_estoque', valor_compra = '$va
 $nome_img = date('d-m-Y H:i:s') .'-'.@$_FILES['foto']['name'];
 $nome_img = preg_replace('/[ :]+/' , '-' , $nome_img);
 
-$caminho = '../../img/contas/' .$nome_img;
+$caminho = '../../images/contas/' .$nome_img;
 
 $imagem_temp = @$_FILES['foto']['tmp_name']; 
 
@@ -64,7 +64,7 @@ if(@$_FILES['foto']['name'] != ""){
 	
 			//EXCLUO A FOTO ANTERIOR
 			if($foto != "sem-foto.jpg"){
-				@unlink('../../img/contas/'.$foto);
+				@unlink('../../images/contas/'.$foto);
 			}
 
 			$foto = $nome_img;

@@ -5,12 +5,6 @@ require_once("../conexao.php");
 
 $pag = 'compras';
 
-//verificar se ele tem a permissão de estar nessa página
-if(@$compras == 'ocultar'){
-    echo "<script>window.location='../index.php'</script>";
-    exit();
-}
-
 
 $data_hoje = date('Y-m-d');
 $data_ontem = date('Y-m-d', strtotime("-1 days",strtotime($data_hoje)));
@@ -111,7 +105,7 @@ $data_final_mes = $ano_atual."-".$mes_atual."-".$dia_final_mes;
 								<select class="form-control sel2" id="produto" name="produto" style="width:100%;" > 
 
 									<?php 
-									$query = $pdo->query("SELECT * FROM produtos ORDER BY nome asc");
+									$query = $pdo->query("SELECT * FROM produtos where tem_estoque = 'Sim' ORDER BY nome asc");
 									$res = $query->fetchAll(PDO::FETCH_ASSOC);
 									$total_reg = @count($res);
 									
@@ -214,7 +208,7 @@ $data_final_mes = $ano_atual."-".$mes_atual."-".$dia_final_mes;
 						</div>
 						<div class="col-md-4">
 							<div id="divImg">
-								<img src="img/contas/sem-foto.jpg"  width="80px" id="target">									
+								<img src="images/contas/sem-foto.jpg"  width="80px" id="target">									
 							</div>
 						</div>
 
@@ -362,12 +356,12 @@ $data_final_mes = $ano_atual."-".$mes_atual."-".$dia_final_mes;
 		resultado = arquivo.split(".", 2);
 
 		if(resultado[1] === 'pdf'){
-			$('#target').attr('src', "img/pdf.png");
+			$('#target').attr('src', "images/pdf.png");
 			return;
 		}
 
 		if(resultado[1] === 'rar' || resultado[1] === 'zip'){
-			$('#target').attr('src', "img/rar.png");
+			$('#target').attr('src', "images/rar.png");
 			return;
 		}
 

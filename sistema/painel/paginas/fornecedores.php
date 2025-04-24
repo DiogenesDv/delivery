@@ -61,6 +61,7 @@ $pag = 'fornecedores';
 						
 					</div>
 
+
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -70,19 +71,23 @@ $pag = 'fornecedores';
 									<option value="CPF">CPF</option>
 									<option value="Telefone">Telefone</option>
 									<option value="Email">Email</option>
-									<option value="Codigo">Código</option>
+									<option value="Código">Código</option>
 									<option value="CNPJ">CNPJ</option>
-								</select>
-							</div>
+								</select>  
+							</div> 	
 						</div>
+
+
 
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Chave Pix</label>
-								<input type="text" class="form-control" id="chave_pix" name="chave_pix" placeholder="Chave Pix aqui">
-							</div>
+								<input type="text" class="form-control" id="chave_pix" name="chave_pix" placeholder="Chave Pix" > 
+							</div> 	
 						</div>
-					</div>					
+					</div>
+
+					
 
 					
 						<input type="hidden" name="id" id="id">
@@ -147,25 +152,28 @@ $pag = 'fornecedores';
 						<span><b>Endereço: </b></span>
 						<span id="endereco_dados"></span>							
 					</div>
+
+
+
 									
-				
+
 				</div>
+
+
 
 				<div class="row" style="border-bottom: 1px solid #cac7c7;">
-				
-					<div class="col-md-6">
+					
+					<div class="col-md-6">							
 						<span><b>Tipo Chave: </b></span>
 						<span id="tipo_chave_dados"></span>
-					</div>
+					</div>	
 
-					<div class="col-md-6">
-						<span><b>Tipo Pix: </b></span>
-						<span id="tipo_pix_dados"></span>
-					</div>
+					<div class="col-md-6">							
+						<span><b>Chave Pix: </b></span>
+						<span id="chave_pix_dados"></span>
+					</div>				
 
 				</div>
-
-
 
 
 
