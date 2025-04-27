@@ -55,6 +55,7 @@ for($i=0; $i < $total_reg; $i++){
 	$data_pgtoF = implode('/', array_reverse(explode('-', $data_pgto)));
 	$data_vencF = implode('/', array_reverse(explode('-', $data_venc)));
 	
+	$whats = '';
 
 		$query2 = $pdo->query("SELECT * FROM fornecedores where id = '$pessoa'");
 		$res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
@@ -63,12 +64,11 @@ for($i=0; $i < $total_reg; $i++){
 			$nome_pessoa = $res2[0]['nome'];
 			$telefone_pessoa = $res2[0]['telefone'];
 			$chave_pix_forn = $res2[0]['chave_pix'];
-			$tipo_chave_forn = $res2[0]['tipo_chave'];
-			$classe_whats = '';
+			$tipo_chave_forn = $res2[0]['tipo_chave'];			
+			$whats = '55'.preg_replace('/[ ()-]+/' , '' , $telefone_pessoa);
 		}else{
 			$nome_pessoa = 'Nenhum!';
-			$telefone_pessoa = '';
-			$classe_whats = 'ocultar';
+			$telefone_pessoa = '';			
 			$chave_pix_forn = '';
 			$tipo_chave_forn = '';
 		}
@@ -81,7 +81,8 @@ for($i=0; $i < $total_reg; $i++){
 			$nome_func = $res2[0]['nome'];
 			$telefone_func = $res2[0]['telefone'];
 			$chave_pix_func = $res2[0]['chave_pix'];
-			$tipo_chave_func = $res2[0]['tipo_chave'];
+			$tipo_chave_func = $res2[0]['tipo_chave'];			
+			$whats = '55'.preg_replace('/[ ()-]+/' , '' , $telefone_func);
 			
 		}else{
 			$nome_func = 'Nenhum!';
@@ -90,6 +91,14 @@ for($i=0; $i < $total_reg; $i++){
 			$tipo_chave_func = '';
 			
 			
+			
+		}
+
+
+		if($nome_func != 'Nenhum!' || $nome_pessoa != 'Nenhum!'){
+			$classe_whats = '';
+		}else{
+			$classe_whats = 'ocultar';
 		}
 
 
@@ -143,7 +152,7 @@ if($data_venc < $data_hoje and $pago != 'Sim'){
 	$classe_debito = '';
 }
 
-$whats = '55'.preg_replace('/[ ()-]+/' , '' , $telefone_pessoa);
+
 
 if($nome_pessoa == 'Nenhum!' and $nome_func != 'Nenhum!'){
 	$chave = 'Pix Funcionário : Tipo '.$tipo_chave_func.' - Chave '.$chave_pix_func;
@@ -152,6 +161,8 @@ if($nome_pessoa == 'Nenhum!' and $nome_func != 'Nenhum!'){
 }else{
 	$chave = 'Nenhuma!';
 }
+
+
 
 
 
@@ -191,7 +202,7 @@ echo <<<HTML
 		<ul class="dropdown-menu" style="margin-left:-230px;">
 		<li>
 		<div class="notification_desc2">
-		<p>Confirmar Baixa na Conta? <a href="#" onclick="baixar('{$id}')"><span class="text-verde">Sim</span></a></p>
+		<p>Confirmar Baixa na Conta? <a href="#" onclick="baixar('{$id}')"><span class="text-verde {$visivel}">Sim</span></a></p>
 		</div>
 		</li>										
 		</ul>
@@ -291,28 +302,5 @@ HTML;
 
 
 
-
-<script type="text/javascript">
-	function saida(id, nome, estoque){
-
-		$('#nome_saida').text(nome);
-		$('#estoque_saida').val(estoque);
-		$('#id_saida').val(id);		
-
-		$('#modalSaida').modal('show');
-	}
-</script>
-
-
-<script type="text/javascript">
-	function entrada(id, nome, estoque){
-
-		$('#nome_entrada').text(nome);
-		$('#estoque_entrada').val(estoque);
-		$('#id_entrada').val(id);		
-
-		$('#modalEntrada').modal('show');
-	}
-</script>
 
 

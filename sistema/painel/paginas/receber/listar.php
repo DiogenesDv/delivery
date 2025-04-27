@@ -96,7 +96,7 @@ for($i=0; $i < $total_reg; $i++){
 			$visivel = '';
 			$total_a_pagar += $valor;
 		}else{
-			$classe_alerta = 'verde';
+			$classe_alerta = 'text-verde';
 			$visivel = 'ocultar';
 			$total_pago += $valor;
 		}
@@ -120,7 +120,7 @@ if($data_venc < $data_hoje and $pago != 'Sim'){
 }
 
 if($pago == 'Sim'){
-	$classe_cor_whats = 'verde';
+	$classe_cor_whats = 'text-verde';
 }else{
 	$classe_cor_whats = 'text-danger';
 }
@@ -135,7 +135,7 @@ echo <<<HTML
 <td class="esc">{$data_pgtoF}</td>
 <td class="esc">{$nome_usuario_pgto}</td>
 <td class="esc">{$nome_pessoa}</td>
-<td><a href="img/contas/{$foto}" target="_blank"><img src="img/contas/{$tumb_arquivo}" width="27px" class="mr-2"></a></td>
+<td><a href="images/contas/{$foto}" target="_blank"><img src="images/contas/{$tumb_arquivo}" width="27px" class="mr-2"></a></td>
 <td>
 		<big><a href="#" onclick="editar('{$id}','{$descricao}', '{$pessoa}', '{$valor}', '{$data_venc}', '{$data_pgto}', '{$tumb_arquivo}')" title="Editar Dados"><i class="fa fa-edit text-primary"></i></a></big>
 
@@ -158,12 +158,12 @@ echo <<<HTML
 
 
 		<li class="dropdown head-dpdn2" style="display: inline-block;">
-		<a title="Baixar Conta" href="#" class="dropdown-toggle {$visivel}" data-toggle="dropdown" aria-expanded="false"><big><i class="fa fa-check-square verde"></i></big></a>
+		<a title="Baixar Conta" href="#" class="dropdown-toggle {$visivel}" data-toggle="dropdown" aria-expanded="false"><big><i class="fa fa-check-square text-verde"></i></big></a>
 
 		<ul class="dropdown-menu" style="margin-left:-230px;">
 		<li>
 		<div class="notification_desc2">
-		<p>Confirmar Baixa na Conta? <a href="#" onclick="baixar('{$id}')"><span class="verde">Sim</span></a></p>
+		<p>Confirmar Baixa na Conta? <a href="#" onclick="baixar('{$id}')"><span class="text-verde">Sim</span></a></p>
 		</div>
 		</li>										
 		</ul>
@@ -188,7 +188,7 @@ echo <<<HTML
 </table>
 
 <br>	
-<div align="right">Total Recebido: <span class="verde">R$ {$total_pagoF}</span> </div>
+<div align="right">Total Recebido: <span class="text-verde">R$ {$total_pagoF}</span> </div>
 <div align="right">Total à Receber: <span class="text-danger">R$ {$total_a_pagarF}</span> </div>
 
 </small>
@@ -224,7 +224,7 @@ HTML;
 		$('#titulo_inserir').text('Editar Registro');
 		$('#modalForm').modal('show');
 		$('#foto').val('');
-		$('#target').attr('src','img/contas/' + foto);
+		$('#target').attr('src','images/contas/' + foto);
 	}
 
 	function limparCampos(){
@@ -235,7 +235,7 @@ HTML;
 		$('#data_venc').val('<?=$data_hoje?>');		
 		$('#foto').val('');
 
-		$('#target').attr('src','img/contas/sem-foto.jpg');
+		$('#target').attr('src','images/contas/sem-foto.jpg');
 	}
 </script>
 
@@ -251,8 +251,8 @@ HTML;
 		$('#usuario_baixa_dados').text(usuario_pgto);
 		$('#pessoa_dados').text(pessoa);
 		
-		$('#link_mostrar').attr('href','img/contas/' + link);
-		$('#target_mostrar').attr('src','img/contas/' + foto);
+		$('#link_mostrar').attr('href','images/contas/' + link);
+		$('#target_mostrar').attr('src','images/contas/' + foto);
 
 		$('#modalDados').modal('show');
 	}

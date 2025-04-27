@@ -15,4 +15,5 @@ if($foto != "sem-foto.jpg"){
 
 $pdo->query("DELETE from $tabela where id = '$id'");
 echo 'Excluído com Sucesso';
+
 ?>

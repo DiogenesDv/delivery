@@ -12,7 +12,7 @@ $produto = $res[0]['produto'];
 $quantidade = $res[0]['quantidade'];
 
 if($foto != "sem-foto.jpg"){
-	@unlink('../../img/contas/'.$foto);
+	@unlink('../../images/contas/'.$foto);
 }
 
 $query = $pdo->query("SELECT * FROM produtos where id = '$produto'");

@@ -1,13 +1,13 @@
-<?php
-    $pag = "usuarios";
-?>
-<div class="">
-    <a class="btn btn-primary" onclick="inserir()" class="btn btn-primary btn-flat btn-pri"><i class="fa fa-plus" aria-hidden="true"></i>  Novo Usuário</a>
+<?php 
+$pag = 'usuarios';
+ ?>
+<a class="btn btn-primary" onclick="inserir()" class="btn btn-primary btn-flat btn-pri"><i class="fa fa-plus" aria-hidden="true"></i> Novo Usuário</a>
+
+
+<div class="bs-example widget-shadow" style="padding:15px" id="listar">
+	
 </div>
 
-<div class="bs-example widget-shadow" style="padding: 15px;" id="listar">
-
-</div>
 
 
 
@@ -59,7 +59,7 @@
 
 						<div class="col-md-4">
 							
-						<div class="form-group">
+							<div class="form-group">
 								<label for="exampleInputEmail1">Nível</label>
 								<select class="form-control sel2" id="cargo" name="cargo" style="width:100%;" > 
 
@@ -79,10 +79,12 @@
 									
 
 								</select>   
-							</div> 	 	
+							</div> 	
 						</div>
 					</div>
-				
+
+					
+
 						<div class="row">
 							<div class="col-md-8">						
 								<div class="form-group"> 
@@ -119,6 +121,9 @@
 
 
 
+
+
+<!-- Modal Dados-->
 <div class="modal fade" id="modalDados" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -201,8 +206,16 @@
 	</div>
 </div>
 
-<script type="text/javascript">let pag = "<?=$pag?>"</script>
+
+
+
+
+
+
+<script type="text/javascript">var pag = "<?=$pag?>"</script>
 <script src="js/ajax.js"></script>
+
+
 
 <script type="text/javascript">
 	function carregarImg() {
