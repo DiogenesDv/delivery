@@ -223,7 +223,7 @@ $dataMesInicial = $partesInicial[1];
 
 									<li><a href="index.php?pagina=categorias"><i class="fa fa-angle-right"></i> Categorias</a></li>
 
-									<li><a href="index.php?pagina=estoque"><i class="fa fa-angle-right"></i> Estoque(quant.baixa)</a></li>
+									<li><a href="index.php?pagina=estoque"><i class="fa fa-angle-right"></i> Estoque</a></li>
 									<li><a href="index.php?pagina=entradas"><i class="fa fa-angle-right"></i> Entradas</a></li>
 									<li><a href="index.php?pagina=saidas"><i class="fa fa-angle-right"></i> Saídas</a></li>
 									
@@ -293,7 +293,6 @@ $dataMesInicial = $partesInicial[1];
 				<!--toggle button end-->
 				<div class="profile_details_left"><!--notifications of menu start -->
 					<ul class="nofitications-dropdown">
-						
 						<?php 
 						$query = $pdo->query("SELECT * FROM vendas where data = CurDate() and status = 'Iniciado'");
 						$res = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -306,7 +305,6 @@ $dataMesInicial = $partesInicial[1];
 							$texto_pedidos = 'Você não possui novos Pedidos!';
 						}
 						?>
-						
 						<li class="dropdown head-dpdn">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-cutlery" style="color:#FFF"></i><span class="badge"><?php echo $total_reg ?></span></a>
 							<ul class="dropdown-menu">
