@@ -64,7 +64,7 @@ $id = $res[0]['id'];
 				<div class="fw-bold titulo-item"><?php echo $nome ?></div>
 				<span class="valor-item">
 					<?php 
-		$query2 = $pdo->query("SELECT * FROM variacoes where produto = '$id' and ativo = 'Sim'");
+$query2 = $pdo->query("SELECT * FROM variacoes where produto = '$id' and ativo = 'Sim'");
 		$res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
 		$total_reg2 = @count($res2);		
 		if($total_reg2 > 0){

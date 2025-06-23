@@ -53,6 +53,8 @@ $logo_sistema = $res[0]['logo_sistema'];
 $favicon_sistema = $res[0]['favicon_sistema'];
 $logo_rel = $res[0]['logo_rel'];
 $tempo_atualizar = $res[0]['tempo_atualizar'];
+$tipo_chave = $res[0]['tipo_chave'];
+$chave_pix = $res[0]['chave_pix'];
 }
 
 
