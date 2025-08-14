@@ -13,10 +13,25 @@ $texto_sabor = ' (2º Sabor)';
 }
 
 if(@$_SESSION['sessao_usuario'] == ""){
-	$sessao = date('Y-m-d-H:i:s-').rand(0, 1500);;
+	$sessao = date('Y-m-d-H:i:s-').rand(0, 1500);
 	$_SESSION['sessao_usuario'] = $sessao;
 }else{
 	$sessao = $_SESSION['sessao_usuario'];
+}
+
+$texto_botao = 'Adicionar ao Carrinho';
+
+if(@$_SESSION['id'] != ""){
+	$id_usuario = $_SESSION['id'];
+	$texto_botao = 'Adicionar ao Pedido';
+	$nome_funcao = 'finalizarPedidoPainel()';
+	$nome_funcao_segundo = 'selecionarSegundoPedido()';
+	$nome_comprar_mais = 'comprarMaisPainel()';
+}else{
+	$id_usuario = '';
+	$nome_funcao = 'finalizarPedido()';
+	$nome_funcao_segundo = 'selecionarSegundo()';
+	$nome_comprar_mais = 'comprarMais()';
 }
 
 $query = $pdo->query("SELECT * FROM carrinho where sessao = '$sessao'");
@@ -24,11 +39,20 @@ $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
 if($total_reg > 0){
 	$id_cliente = $res[0]['cliente'];
+	$mesa_carrinho = $res[0]['mesa'];
+	$nome_cli_pedido = $res[0]['nome_cliente'];
+
 
 	$query = $pdo->query("SELECT * FROM clientes where id = '$id_cliente'");
 	$res = $query->fetchAll(PDO::FETCH_ASSOC);
-	$nome_cliente = $res[0]['nome'];
-	$telefone_cliente = $res[0]['telefone'];
+	if(@count($res) > 0){
+		$nome_cliente = $res[0]['nome'];
+		$telefone_cliente = $res[0]['telefone'];
+	}else{
+		$nome_cliente = $nome_cli_pedido;
+		$telefone_cliente = '';
+	}
+	
 }
 
 $separar_url = explode("_", $url_completa);
@@ -201,7 +225,7 @@ $total_ing = @count($res);
 
 
 <div class="d-grid gap-2 mt-4 abaixo">
-	<a href='#popup2' class="btn btn-primary botao-carrinho">Adicionar ao Carrinho</a>
+	<a href='#' onclick="addCarrinho()" class="btn btn-primary botao-carrinho"><?php echo $texto_botao ?></a>
 </div>
 
 
@@ -221,12 +245,42 @@ $total_ing = @count($res);
 					<form action="carrinho.php" method="post">						     
 						<div class="row">								
 							<div class="col-6"> 
-								<div class="group">
-									<input onkeyup="buscarNome()" type="text" class="input" name="telefone" id="telefone" required value="<?php echo @$telefone_cliente ?>">
-									<span class="highlight"></span>
-									<span class="bar"></span>
-									<label class="label">Telefone</label>
-								</div>
+
+								<?php if($id_usuario == ""){ ?>
+									<div class="group">
+										<input onkeyup="buscarNome()" type="text" class="input" name="telefone" id="telefone" required value="<?php echo @$telefone_cliente ?>">
+										<span class="highlight"></span>
+										<span class="bar"></span>
+										<label class="label">Telefone</label>
+									</div>
+								<?php }else{ ?> 
+									<div class="group">
+											<select class="form-control" id="mesa" name="telefone" style="width:100%;" >
+											<option value="0">Selecione uma Mesa</option> 
+
+									<?php 
+									$query = $pdo->query("SELECT * FROM mesas");
+									$res = $query->fetchAll(PDO::FETCH_ASSOC);
+									$total_reg = @count($res);
+									if($total_reg > 0){
+										for($i=0; $i < $total_reg; $i++){
+										foreach ($res[$i] as $key => $value){}
+										if($mesa_carrinho == $res[$i]['nome']){
+											$selected = 'selected';
+										}else{
+											$selected = '';
+										}	
+										echo '<option value="'.$res[$i]['nome'].'" '.$selected.'>'.$res[$i]['nome'].'</option>';
+										}
+									}
+									 ?>
+									
+
+								</select>   
+										
+									</div>
+								<?php } ?>
+								
 							</div>
 
 
@@ -244,11 +298,11 @@ $total_ing = @count($res);
 
 						<div class="row" align="center">								
 							<div class="col-6"> 
-								<a href="#" onclick="comprarMais()" class="btn btn-primary" style="width:100%">Comprar Mais</a>
+								<a href="#" onclick="<?php echo $nome_comprar_mais ?>" class="btn btn-primary" style="width:100%">Comprar Mais</a>
 							</div>
 
 							<div class="col-6"> 
-								<a href="#" onclick="finalizarPedido()" class="btn btn-success" style="width:100%">Finalizar Pedido</a>
+								<a href="#" onclick="<?php echo $nome_funcao ?>" class="btn btn-success" style="width:100%">Finalizar Pedido</a>
 							</div>
 
 						</div>
@@ -257,7 +311,7 @@ $total_ing = @count($res);
 
 							<div class="row" align="center">								
 							<div class="col-12"> 
-								<a href="#" onclick="selecionarSegundo()" class="btn btn-primary" style="width:100%">Selecionar Segundo Sabor</a>
+								<a href="#" onclick="<?php echo $nome_funcao_segundo ?>" class="btn btn-primary" style="width:100%">Selecionar Segundo Sabor</a>
 							</div>							
 
 						</div>
@@ -276,15 +330,6 @@ $total_ing = @count($res);
 	</div>
 </div>
 
-
-<!-- jQery -->
-<script src="js/jquery-3.4.1.min.js"></script>
-
-<!-- Mascaras JS -->
-<script type="text/javascript" src="js/mascaras.js"></script>
-
-<!-- Ajax para funcionar Mascaras JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script> 
 
 
 <script type="text/javascript">
@@ -332,93 +377,10 @@ $total_ing = @count($res);
 
 <script type="text/javascript">
 	
-	function buscarNome(){
-
-		var tel = $('#telefone').val();	
-				
-		$.ajax({
-			url: 'js/ajax/listar-nome.php',
-			method: 'POST',
-			data: {tel},
-			dataType: "text",
-
-			success:function(result){	
-
-				$('#nome').val(result);	
-			}
-		});	
-	}
+	
 
 
-
-
-	function comprarMais(){
-		var telefone = $('#telefone').val();
-		var nome = $('#nome').val();
-		if(telefone == ''){
-			alert('Preencha o Telefone!');
-			return;
-		}
-		if(nome == ''){
-			alert('Preencha o Nome!');
-			return;
-		}
-		addCarrinho();
-		setTimeout(redirecionar, 1000);
-	}
-
-
-	function finalizarPedido(){
-		var telefone = $('#telefone').val();
-		var nome = $('#nome').val();
-		if(telefone == ''){
-			alert('Preencha o Telefone!');
-			return;
-		}
-		if(nome == ''){
-			alert('Preencha o Nome!');
-			return;
-		}
-		addCarrinho();
-		setTimeout(redirecionarCarrinho, 1000);
-	}
-
-
-	function selecionarSegundo(){
-		var telefone = $('#telefone').val();
-		var nome = $('#nome').val();
-		if(telefone == ''){
-			alert('Preencha o Telefone!');
-			return;
-		}
-		if(nome == ''){
-			alert('Preencha o Nome!');
-			return;
-		}
-		addCarrinho();
-		setTimeout(redirecionarCategoria, 1000);
-	}
-
-
-	function redirecionar(){
-		 window.location='index';
-	}
-
-
-	function redirecionarCarrinho(){
-		 window.location='carrinho';
-	}
-
-
-	function redirecionarCategoria(){
-		var url = "<?=$url_itens?>";
-		 window.location=url;
-	}
-
-
-	function addCarrinho(){
-		var telefone = $('#telefone').val();
-		var nome = $('#nome').val();
+	function addCarrinho(){		
 		var quantidade = $('#quantidade').val();
 		var total_item = $('#total_item_input').val();
 		var produto = "<?=$id_prod?>";
@@ -426,16 +388,18 @@ $total_ing = @count($res);
 		var sabores = "<?=$sabores?>";
 		var variacao = "<?=$id_variacao?>";
 		
-
 		 $.ajax({
         url: 'js/ajax/add-carrinho.php',
         method: 'POST',
-        data: {telefone, nome, quantidade, total_item, produto, obs, sabores, variacao},
+        data: {quantidade, total_item, produto, obs, sabores, variacao},
         dataType: "text",
 
         success: function (mensagem) {  
+        	
                   
-            if (mensagem.trim() == "Inserido com Sucesso") {                
+            if (mensagem.trim() == "Inserido com Sucesso") {  
+
+            window.location='carrinho';              
                           
             } 
 

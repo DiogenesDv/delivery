@@ -76,6 +76,8 @@ for($i=0; $i < $total_reg; $i++){
 	$tipo_pgto = $res[$i]['tipo_pgto'];
 	$usuario_baixa = $res[$i]['usuario_baixa'];
 	$entrega = $res[$i]['entrega'];
+	$mesa = $res[$i]['mesa'];
+	$nome_cliente_ped = $res[$i]['nome_cliente'];
 	
 	$valorF = number_format($valor, 2, ',', '.');
 	$total_pagoF = number_format($total_pago, 2, ',', '.');
@@ -109,7 +111,11 @@ for($i=0; $i < $total_reg; $i++){
 			$nome_cliente = $res2[0]['nome'];
 			$telefone_cliente = $res2[0]['telefone'];
 		}else{
-			$nome_cliente = 'Nenhum!';
+			if($mesa != '0' and $mesa != ''){
+				$nome_cliente = 'Mesa: '.$mesa;
+			}else{
+				$nome_cliente = $nome_cliente_ped;
+			}
 			$telefone_cliente = '';
 		}
 
@@ -167,17 +173,19 @@ for($i=0; $i < $total_reg; $i++){
 			$classe_entrega = 'text-verde';
 		}
 
+		
+
 
 
 echo <<<HTML
 <tr class="">
-<td><i class="fa fa-square {$classe_alerta}"></i> <b>Pedido ({$id})</b> / {$nome_cliente} <span class="{$classe_entrega}"><small>({$entrega})</small></span></td>
+<td><i class="fa fa-square {$classe_alerta}"></i> <b>Pedido ({$id})</b> / {$nome_cliente} <span class="{$classe_entrega}"><small>({$entrega}) </small></span></td>
 <td class="esc">R$ {$valorF}</td>
 <td class="esc {$classe_pago}">R$ {$total_pagoF} <small>{$texto_pago}</small></td>
 <td class="esc">R$ {$trocoF}</td>
 <td class="esc">{$tipo_pgto}</td>
 <td class="esc">
-<a title="{$titulo_link}" href="#" onclick="ativar('{$id}','{$acao_link}','{$whatsapp_cliente}','{$valorF}','{$tipo_pgto}','{$hora_pedido}','{$entrega}')">
+<a title="{$titulo_link}" href="#" onclick="ativarPedido('{$id}','{$acao_link}','{$whatsapp_cliente}','{$valorF}','{$tipo_pgto}','{$hora_pedido}','{$entrega}')">
 {$status} 
 <i class="fa fa-arrow-right {$cor_icone_link}"></i>
 </a>
@@ -234,6 +242,13 @@ HTML;
 	echo '<small>Não possui nenhum Pedido Hoje ainda!</small>';
 }
 
+
+
+$query = $pdo->query("SELECT * FROM vendas where data = CurDate() and status = 'Iniciado'");
+$res = $query->fetchAll(PDO::FETCH_ASSOC);
+$total_dos_itens_pedidos = @count($res); 
+
+
 ?>
 
 <script type="text/javascript">
@@ -244,6 +259,8 @@ HTML;
 	$('#prep_pedidos').text("<?=$total_prep?>");
 	$('#ent_pedidos').text("<?=$total_ent?>");
 	$('#id_pedido').val("<?=$id_ult_pedido?>");
+
+	$('#total-dos-pedidos').text("<?=$total_dos_itens_pedidos?>");
 			
     $('#tabela').DataTable({
     		"ordering": false,
@@ -275,7 +292,7 @@ HTML;
 
 <script type="text/javascript">
 	
-function ativar(id, acao, telefone, total, pagamento, hora, entrega){
+function ativarPedido(id, acao, telefone, total, pagamento, hora, entrega){
 	var pedido_whatsapp = "<?=$status_whatsapp?>";
 
 
@@ -301,11 +318,13 @@ function ativar(id, acao, telefone, total, pagamento, hora, entrega){
     $.ajax({
         url: 'paginas/' + pag + "/mudar-status.php",
         method: 'POST',
-        data: {id, acao},
+        data: {id, acao, telefone, total, pagamento, texto},
         dataType: "text",
 
-        success: function (mensagem) {            
-            if (mensagem.trim() == "Alterado com Sucesso") {                
+        success: function (mensagem) {  
+        var split = mensagem.split("***"); 
+
+            if (split[0] == "Alterado com Sucesso") {                
                 listar();     
                 if(acao.trim() === 'Entrega'){
                 	if(pedido_whatsapp == 'Sim'){
@@ -314,7 +333,6 @@ function ativar(id, acao, telefone, total, pagamento, hora, entrega){
 		                a.href= 'http://api.whatsapp.com/send?1=pt_BR&phone='+telefone+'&text= *Atenção*  %0A '+texto+' %0A *Total* R$'+total+' %0A *Tipo Pagamento* '+pagamento+' %0A';
 		                a.click();
            }
-
                 }           
             } else {
                 $('#mensagem-excluir').addClass('text-danger')

@@ -2,6 +2,9 @@
 require_once("cabecalho.php");
 $url = $_GET['url'];
 
+$Segundo_sabor = " 2";
+$Primeiro_sabor = " 1";
+
 $query = $pdo->query("SELECT * FROM categorias where url = '$url'");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
@@ -35,19 +38,31 @@ if($sabores != "2"){
 	</nav>
 
 <?php if($mais_sabores == 'Sim'){ ?>
+
 <div class="sabores row" style="margin-top: 65px; margin-bottom: 10px">	
-	<div class="col-6">
-		<a href="categoria-<?php echo $url ?>&sabores=<?php echo $sabores ?>" class="link-neutro">
-	<div class="sabores-itens" >
-	<img src="img/1sabor.png" width="35px"><br>
- 1 Sabor
-	</div>
-</a>
-</div>
+		<!--<div class="col-6">
+				<a href="#" class="link-neutro">
+					<div class="sabores-itens" >
+						<img src="img/1sabor.png" width="35px"><br>
+						1 Sabor
+					</div>
+				</a>
+			</div>-->
 	<div class="col-6">	
 	<div class="sabores-itens" style="background-color: #e6f8ff">
 		<img src="img/2sabor.png" width="35px"><br>
-2 Sabores
+		<?php
+		if ($sabores == "2") {
+		?>
+			Escolha o Sabor <?php echo $Segundo_sabor?>
+		<?php	
+		}else{
+		?>
+			Escolha o Sabor <?php echo $Primeiro_sabor?>
+		<?php	
+		}
+		?>
+			
 	</div>
 	
 </div>
@@ -74,9 +89,12 @@ if($sabores != "2"){
 				$valorF = number_format($valor, 2, ',', '.');
 
 				if($tem_estoque == 'Sim' and $estoque <= 0){
-					$mostrar = 'ocultar';
-				}else{
 					$mostrar = '';
+					$url_produto = '#';					
+				}else{
+					$mostrar = 'ocultar';
+					$url_produto = 'produto-'.$url.'&sabores='.$sabores;
+					
 				}
 
 				
@@ -84,11 +102,19 @@ if($sabores != "2"){
 
 				?>
 
-		<a href="produto-<?php echo $url ?>&sabores=<?php echo $sabores ?>" class="link-neutro <?php echo $mostrar ?>">
+		<a href="<?php echo $url_produto ?>" class="link-neutro">
 		<li class="list-group-item d-flex justify-content-between align-items-start "> 
+
+			<img class="<?php echo $mostrar ?>" src="img/esgotado.png" width="75px" height="75px" style="position:absolute; right:0; top:0px">
+
+				<div class="row" style="width:100%">
+					<div class="col-10">
+
 			<div class="me-auto">
+				
 				<div class="fw-bold titulo-item"><?php echo $nome ?></div>
-				<span class="valor-item">
+				<div class="subtitulo-item-menor"><?php echo $descricao ?></div>
+				<span class="valor-item-maior">
 					<?php 
 $query2 = $pdo->query("SELECT * FROM variacoes where produto = '$id' and ativo = 'Sim'");
 		$res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
@@ -113,6 +139,17 @@ $query2 = $pdo->query("SELECT * FROM variacoes where produto = '$id' and ativo =
 				
 			</span>
 			</div>
+
+				</div>
+		
+
+		<div class="col-2" style="margin-top: 10px;" align="right">
+			<img class="" src="sistema/painel/images/produtos/<?php echo $foto ?>" width="60px" height="60px">
+		</div>
+
+	
+
+</div>
 			
 		</li>
 		</a>
