@@ -162,6 +162,7 @@ echo <<<HTML
 				<a title="Ver Adicionais" class="link-neutro" href="#" onclick="adicionais('{$nome_produto}', '{$id}', '{$id_sabor}')"><i class="bi  bi-plus text-primary"></i><small><small>Adicionais</small></small></a>
 			</div>
 
+			
 			<a href="#" onclick="mudarQuant('{$id}', '{$quantidade}', 'menos')" class="link-neutro">
 			<div class="menos-mais">
 			-

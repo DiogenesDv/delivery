@@ -634,7 +634,7 @@ if($id_usuario != ''){
             setTimeout(()=>{
               alert('Pedido Finalizado!');
             window.location='index.php';
-        },500);
+        },100);
            
 
            if(pedido_whatsapp == 'Sim'){
