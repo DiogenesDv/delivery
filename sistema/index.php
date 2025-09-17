@@ -78,7 +78,9 @@ if($total_reg > 0){
 					<div class="form-data" v-if="!submitted">
 						<div class="logo">
 							<img src="../img/<?php echo $logo_sistema ?>" width="100px">
+							<div><h6>Painel Administrativo</h6></div>
 						</div>
+						<br>
 						<form method='POST' action='autenticar.php'>
 							<div class="forms-inputs mb-4 "> <span>Email ou CPF</span> 
 								<input autocomplete="off" type="text" v-model="email" v-bind:class="{'form-control':true, 'is-invalid' : !validEmail(email) && emailBlured}" v-on:blur="emailBlured = true" class='form-control' name="email" required>                      
@@ -91,11 +93,11 @@ if($total_reg > 0){
 								<button type="submit" class="btn btn-dark w-100">Login</button>
 							</div>
 
-
+							<!--
 							<div class="mb-3" align="center"> 
 								<a href="" class="link-rec" data-bs-toggle="modal" data-bs-target="#modal-rec">Recuperar Senha</a>
 							</div>
-
+							-->
 
 
 						</form>
