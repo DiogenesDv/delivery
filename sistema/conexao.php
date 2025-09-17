@@ -15,10 +15,10 @@ $banco = 'hugocu75_interativo';
 $servidor = 'sh-pro24.hostgator.com.br';
 */
 
-$url_sistema = "http://$_SERVER[HTTP_HOST]/";
+$url_sistema = "http://$_SERVER[HTTP_HOST]/delivery/";
 $url = explode("//", $url_sistema);
 if($url[1] == 'localhost/'){
-	$url_sistema = "http://$_SERVER[HTTP_HOST]/delivery/";
+	$url_sistema = "http://$_SERVER[HTTP_HOST]/delivery/sistema/painel/rel/";
 }
 
 date_default_timezone_set('America/Sao_Paulo');
