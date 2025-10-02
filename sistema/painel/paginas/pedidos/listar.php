@@ -37,7 +37,7 @@ if($ult_ped < $id_ult_pedido and $ult_ped != ""){
 }
 
 
-$query = $pdo->query("SELECT * FROM $tabela where status LIKE '$status' and status != 'Finalizado' and status != 'Cancelado' order by hora asc");
+$query = $pdo->query("SELECT * FROM $tabela where status LIKE '$status' and status != 'Finalizado' and status != 'Cancelado' order by hora DESC");//MOSTRAR no painel em ordem decresente, para ficar sempre o ultimo pedido no topo!
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
 if($total_reg > 0){
