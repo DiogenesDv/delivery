@@ -2,9 +2,6 @@
 require_once("cabecalho.php");
 $url = $_GET['url'];
 
-$Segundo_sabor = " 2";
-$Primeiro_sabor = " 1";
-
 $query = $pdo->query("SELECT * FROM categorias where url = '$url'");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
@@ -38,31 +35,19 @@ if($sabores != "2"){
 	</nav>
 
 <?php if($mais_sabores == 'Sim'){ ?>
-
 <div class="sabores row" style="margin-top: 65px; margin-bottom: 10px">	
-		<!--<div class="col-6">
-				<a href="#" class="link-neutro">
-					<div class="sabores-itens" >
-						<img src="img/1sabor.png" width="35px"><br>
-						1 Sabor
-					</div>
-				</a>
-			</div>-->
+	<div class="col-6">
+		<a href="categoria-<?php echo $url ?>&sabores=<?php echo $sabores ?>" class="link-neutro">
+	<div class="sabores-itens" >
+	<img src="img/1sabor.png" width="35px"><br>
+ 1 Sabor
+	</div>
+</a>
+</div>
 	<div class="col-6">	
 	<div class="sabores-itens" style="background-color: #e6f8ff">
 		<img src="img/2sabor.png" width="35px"><br>
-		<?php
-		if ($sabores == "2") {
-		?>
-			Escolha o Sabor <?php echo $Segundo_sabor?>
-		<?php	
-		}else{
-		?>
-			Escolha o Sabor <?php echo $Primeiro_sabor?>
-		<?php	
-		}
-		?>
-			
+2 Sabores
 	</div>
 	
 </div>

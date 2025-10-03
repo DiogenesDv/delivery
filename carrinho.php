@@ -22,9 +22,11 @@ $sessao = $_SESSION['sessao_usuario'];
 
 			</div>
 
-      <a class="text-dark link-neutro" href="index.php" >
-        <bottom class="d-flex carrinho btn btn-primary">Comprar +</bottom>
-      </a>
+      <a class="text-dark" href="index.php" >
+          <div class="d-flex carrinho" style="color:blue"> 
+            <small><small>Comprar Mais?</small></small>
+          </div>
+        </a>
 
 			
 

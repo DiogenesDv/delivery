@@ -6,7 +6,6 @@ $senha = '';
 $banco = 'delivery';
 $servidor = 'localhost';
 
-
 /*
 //servidor hospedado
 $usuario = 'hugocu75_interativo';
@@ -15,10 +14,10 @@ $banco = 'hugocu75_interativo';
 $servidor = 'sh-pro24.hostgator.com.br';
 */
 
-$url_sistema = "http://$_SERVER[HTTP_HOST]/delivery/";
+$url_sistema = "http://$_SERVER[HTTP_HOST]/";
 $url = explode("//", $url_sistema);
 if($url[1] == 'localhost/'){
-	$url_sistema = "http://$_SERVER[HTTP_HOST]/delivery/sistema/painel/rel/";
+	$url_sistema = "http://$_SERVER[HTTP_HOST]/delivery/";
 }
 
 date_default_timezone_set('America/Sao_Paulo');
@@ -70,6 +69,8 @@ $dias_apagar = $res[0]['dias_apagar'];
 $impressao_automatica = $res[0]['impressao_automatica'];
 $fonte_comprovante = $res[0]['fonte_comprovante'];
 $banner_rotativo = $res[0]['banner_rotativo'];
+$token = $res[0]['token'];
+$instancia = $res[0]['instancia'];
 
 $whatsapp_sistema = '55'.preg_replace('/[ ()-]+/' , '' , $telefone_sistema);
 }
